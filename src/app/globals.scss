@@ -1,0 +1,29 @@
+@use "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-primary-20: var(--primary-20);
+  --color-gray: var(--gray);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #63b779;
+  --primary-20: #63b77920;
+}
+
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --background: #0a0a0a;
+//     --foreground: #ededed;
+//   }
+// }
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
