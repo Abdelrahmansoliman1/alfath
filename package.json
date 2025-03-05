@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-navigation-menu": "^1.2.5",
+    "flowbite-react": "^0.10.2",
     "next": "15.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
@@ -24,5 +26,10 @@
     "sass": "^1.85.1",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "@parcel/watcher"
+    ]
   }
 }
