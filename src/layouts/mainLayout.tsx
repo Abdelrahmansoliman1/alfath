@@ -10,8 +10,10 @@ export default function MainLayout({
   return (
     <div className="relative">
       <Navbar />
-      <div className="relative grid gap-8">
-        <SocialMedia />
+      <div className="relative grid gap-8 min-h-[3000px]">
+        <div className="absolute top-0 right-0">
+          <SocialMedia />
+        </div>
         {children}
       </div>
       <Footer />

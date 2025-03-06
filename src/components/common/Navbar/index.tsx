@@ -1,17 +1,42 @@
+"use client";
+
 import Link from "next/link";
 import {
   Navbar as NavbarFlowbite,
   NavbarBrand,
   NavbarCollapse,
   NavbarLink,
-  NavbarToggle,
+  Dropdown,
+  DropdownItem,
 } from "flowbite-react";
 import Image from "next/image";
 import { theme } from "./theme";
+import { navItems } from "./constant";
+import { usePathname } from "next/navigation";
+import { useMotionValueEvent, useScroll } from "motion/react";
+import { useState } from "react";
+import { SidebarDrawer } from "../sidebarDrawer";
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const [outHeader, setOutHeader] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (current) => {
+    const out = current >= window.innerHeight;
+    // setScrollDirection(diff > 0 ? "down" : "up");
+    setOutHeader(out);
+  });
+
   return (
-    <NavbarFlowbite theme={theme}>
+    <NavbarFlowbite
+      theme={theme}
+      className={`${
+        outHeader
+          ? "after:absolute after:inset-0 after:w-full after:bg-primary/50 after:blur-sm after:-z-10 shadow-sm text-black after:scale-125"
+          : ""
+      } `}
+    >
       <NavbarBrand as={Link} href="https://flowbite-react.com">
         <Image
           src="/logo.png"
@@ -21,17 +46,56 @@ export default function Navbar() {
           height={40}
         />
       </NavbarBrand>
-      <NavbarToggle />
+      {/* <NavbarToggle /> */}
+      <SidebarDrawer />
       <NavbarCollapse>
-        <NavbarLink href="#" active>
-          Home
-        </NavbarLink>
-        <NavbarLink as={Link} href="#">
-          About
-        </NavbarLink>
-        <NavbarLink href="#">Services</NavbarLink>
-        <NavbarLink href="#">Pricing</NavbarLink>
-        <NavbarLink href="#">Contact</NavbarLink>
+        {navItems.map((item) => {
+          if (item.list) {
+            return (
+              <NavbarLink
+                key={item.path}
+                active={pathname.startsWith(item.path)}
+              >
+                <Dropdown key={item.label} label={item.label} inline>
+                  {item.list.map((item) => {
+                    const itemActive = pathname === item.path;
+
+                    return (
+                      <DropdownItem
+                        key={item.path}
+                        as={Link}
+                        href={item.path}
+                        className="[&>li]:w-full"
+                      >
+                        <NavbarLink
+                          key={item.path}
+                          as={Link}
+                          href={item.path}
+                          className={`w-full ${
+                            itemActive ? "text-primary" : "text-black"
+                          }`}
+                        >
+                          {item.label}
+                        </NavbarLink>
+                      </DropdownItem>
+                    );
+                  })}
+                </Dropdown>
+              </NavbarLink>
+            );
+          }
+
+          return (
+            <NavbarLink
+              key={item.path}
+              as={Link}
+              href={item.path}
+              active={pathname === item.path}
+            >
+              {item.label}
+            </NavbarLink>
+          );
+        })}
       </NavbarCollapse>
     </NavbarFlowbite>
   );

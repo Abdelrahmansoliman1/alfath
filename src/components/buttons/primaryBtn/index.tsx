@@ -1,0 +1,60 @@
+import { Button, ButtonProps } from "flowbite-react";
+
+const customTheme = {
+  base: "group flex items-stretch items-center justify-center p-0 text-center font-semibold relative focus:z-10 focus:outline-none transition-[color,background-color,border-color,text-decoration-color,fill,stroke,box-shadow] disabled:opacity-70 w-fit disabled:pointer-events-none border  min-w-[150px] shadow-main cursor-pointer",
+
+  color: {
+    primary:
+      "bg-primary enabled:hover:bg-primary/10 enabled:hover:text-primary border-primary  text-white",
+    white:
+      "bg-white enabled:hover:bg-transparent enabled:hover:text-white border-white  text-primary",
+    primaryOutLine:
+      "bg-transparent enabled:hover:bg-primary enabled:hover:text-white border-primary  text-primary",
+    primaryCancel:
+      "bg-white  border-primary text-primary opacity-50 hover:opacity-100",
+    grayOutLine:
+      "bg-transparent  border-dark-gray text-dark-gray opacity-50 hover:opacity-100 shadow-sm",
+    success:
+      "bg-success-color enabled:hover:bg-success-color/10 enabled:hover:text-success-color border-success-color text-white",
+    successOutLine:
+      "enabled:hover:bg-success-color bg-success-color/10 text-success-color border-success-color  enabled:hover:text-white",
+    failure:
+      "bg-error-color enabled:hover:bg-error-color/10 enabled:hover:text-error-color border-error-color  text-white",
+    failureOutLine:
+      "enabled:hover:bg-error-color bg-error-color/10 text-error-color border-error-color  enabled:hover:text-white",
+    transparent: "text-primary border-0",
+  },
+  disabled: "cursor-wait opacity-50 !bg-gray pointer-events-none",
+  spinnerSlot: "absolute top-0 flex h-full items-center main-spinner-custom",
+  pill: {
+    off: "rounded-full",
+    on: "rounded-full",
+  },
+  size: {
+    md: "text-base px-4 py-2",
+    lg: "text-2xl px-5 py-2.5",
+  },
+};
+
+export default function PrimaryBtn({
+  children,
+  color = "primary",
+  id,
+  ...props
+}: ButtonProps & {
+  color?: colorTypes;
+  pluse?: boolean;
+  id: string;
+}) {
+  return (
+    <Button
+      theme={customTheme}
+      {...props}
+      color={color}
+      disabled={props.isProcessing || props.disabled}
+      id={id}
+    >
+      <span className="flex items-center gap-2 capitalize">{children}</span>
+    </Button>
+  );
+}
