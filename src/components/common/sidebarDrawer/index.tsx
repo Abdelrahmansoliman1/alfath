@@ -19,7 +19,7 @@ export function SidebarDrawer() {
         onClick={() => setIsOpen(true)}
         color="primaryOutLine"
         id="drawer"
-        className="!w-fit min-w-auto rounded-sm"
+        className="!w-fit min-w-auto rounded-sm md:hidden"
       >
         <Icon path={mdiMenu} size={1} />
       </PrimaryBtn>
