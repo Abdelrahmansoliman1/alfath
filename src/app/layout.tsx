@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.scss";
-import MainLayout from "@/layouts/mainLayout";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
+import Loading from "./loading";
+import { AnimatePresence } from "motion/react";
+// import MainLayout from "@/layouts/mainLayout";
+
+const MainLayout = dynamic(() => import("@/layouts/mainLayout"));
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +34,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <MainLayout>{children}</MainLayout>
+        <AnimatePresence>
+          <Suspense fallback={<Loading />}>
+            <MainLayout>{children}</MainLayout>
+          </Suspense>
+        </AnimatePresence>
       </body>
     </html>
   );
