@@ -36,10 +36,10 @@ const contactUsList: {
         // title: "Head Office :",
         text: "- 5th Floor At 57 Fouad St. - Raml Station - Alexandria, Egypt",
       },
-      // {
-      //   title: "Sokhna Office :",
-      //   text: "- Office 5 At 2nd Floor Sky Mall Beside Sokhna Port Terminal Gate",
-      // },
+      {
+        // title: "Sokhna Office :",
+        text: "- Office 5 At 2nd Floor Sky Mall Beside Sokhna Port Terminal Gate",
+      },
     ],
   },
   {
@@ -147,7 +147,7 @@ export default function Footer() {
                   <span className="text-xl p-2 bg-white text-primary rounded-full">
                     {item.icon}
                   </span>
-                  <div className="grid  gap-2">
+                  <div className="grid">
                     <span className="text-xl font-bold">{item.title}</span>
                     {item.text.map((text, index) => (
                       <ul className="grid" key={index}>

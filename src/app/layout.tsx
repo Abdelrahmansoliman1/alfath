@@ -35,6 +35,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AnimatePresence>
+          {/* <Loading /> */}
           <Suspense fallback={<Loading />}>
             <MainLayout>{children}</MainLayout>
           </Suspense>

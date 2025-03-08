@@ -47,7 +47,7 @@ export const theme = {
 
 export const dropdownTheme = {
   arrowIcon: "ml-2 h-4 w-4",
-  content: "py-1 focus:outline-none  ",
+  content: "py-1 focus:outline-none ",
   floating: {
     animation: "transition-opacity",
     arrow: {
@@ -76,5 +76,5 @@ export const dropdownTheme = {
     },
     target: "w-fit",
   },
-  inlineWrapper: "flex items-center",
+  inlineWrapper: "flex items-center ",
 };

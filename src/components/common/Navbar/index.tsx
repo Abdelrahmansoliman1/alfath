@@ -13,26 +13,22 @@ import Image from "next/image";
 import { theme } from "./theme";
 import { navItems } from "./constant";
 import { usePathname } from "next/navigation";
-import { useMotionValueEvent, useScroll } from "motion/react";
-import { useState } from "react";
 import { SidebarDrawer } from "../sidebarDrawer";
 
-export default function Navbar() {
+export default function Navbar({
+  bg = "after:bg-black",
+  show,
+}: {
+  bg?: string;
+  show?: boolean;
+}) {
   const pathname = usePathname();
-  const [outHeader, setOutHeader] = useState(false);
-  const { scrollY } = useScroll();
-
-  useMotionValueEvent(scrollY, "change", (current) => {
-    const out = current >= window.innerHeight;
-    // setScrollDirection(diff > 0 ? "down" : "up");
-    setOutHeader(out);
-  });
 
   return (
     <NavbarFlowbite
       theme={theme}
-      className={`after:absolute after:inset-0 after:w-full after:bg-black  after:-z-10  text-black after:transition-all after:duration-300 after:origin-top ${
-        outHeader ? "after:scale-y-125 shadow-sm" : "after:scale-y-0"
+      className={`after:absolute after:inset-0 after:w-full after: ${bg}  after:-z-10  text-black after:transition-all after:duration-300 after:origin-top ${
+        show ? "after:scale-y-100 shadow-sm" : "after:scale-y-0"
       } `}
     >
       <NavbarBrand as={Link} href="https://flowbite-react.com">
@@ -54,7 +50,12 @@ export default function Navbar() {
                 key={item.path}
                 active={pathname.startsWith(item.path)}
               >
-                <Dropdown key={item.label} label={item.label} inline>
+                <Dropdown
+                  key={item.label}
+                  label={item.label}
+                  inline
+                  className="cursor-pointer"
+                >
                   {item.list.map((item) => {
                     const itemActive = pathname === item.path;
 
