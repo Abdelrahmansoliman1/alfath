@@ -31,10 +31,8 @@ export default function Navbar() {
   return (
     <NavbarFlowbite
       theme={theme}
-      className={`${
-        outHeader
-          ? "after:absolute after:inset-0 after:w-full after:bg-primary/50 after:blur-sm after:-z-10 shadow-sm text-black after:scale-125"
-          : ""
+      className={`after:absolute after:inset-0 after:w-full after:bg-black  after:-z-10  text-black after:transition-all after:duration-300 after:origin-top ${
+        outHeader ? "after:scale-y-125 shadow-sm" : "after:scale-y-0"
       } `}
     >
       <NavbarBrand as={Link} href="https://flowbite-react.com">

@@ -4,7 +4,7 @@ import {
   GrLinkedinOption,
 } from "react-icons/gr";
 
-const soicalMediaList = [
+export const socialMediaList = [
   {
     icon: <GrFacebookOption />,
     link: "https://www.facebook.com/share/1B4sD7v9zR/?mibextid=wwXIfr",
@@ -26,8 +26,10 @@ type Props = {
 
 export default function SocialMedia({ className = "", dir = "row" }: Props) {
   return (
-    <div className={`p-2 flex gap-4 ${className} flex-${dir}`}>
-      {soicalMediaList.map((item, index) => (
+    <div
+      className={`p-2 flex gap-4 ${className} flex-${dir} shadow-sm bg-white rounded-full`}
+    >
+      {socialMediaList.map((item, index) => (
         <a
           key={index}
           href={item.link}

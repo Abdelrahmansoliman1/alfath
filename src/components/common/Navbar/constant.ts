@@ -12,31 +12,27 @@ export const navItems = [
     path: "/our-services",
     list: [
       {
-        label: "land freight",
-        path: "/our-services/land-freight",
+        label: "Shipping Agency",
+        path: "/our-services/shipping-agency",
       },
       {
-        label: "air freight",
-        path: "/our-services/air-freight",
+        label: "Storage Services",
+        path: "/our-services/storage-services",
       },
       {
-        label: "sea freight",
-        path: "/our-services/sea-freight",
+        label: "Transportation Services",
+        path: "/our-services/transportation-services",
       },
       {
-        label: "NVOCC Services",
-        path: "/our-services/nvocc-services",
-      },
-      {
-        label: "custom clearance",
-        path: "/our-services/custom-clearance",
+        label: "other shipping services",
+        path: "/our-services/other-shipping-services",
       },
     ],
   },
-  {
-    label: "gallery",
-    path: "/gallery",
-  },
+  // {
+  //   label: "gallery",
+  //   path: "/gallery",
+  // },
   {
     label: "Contact Us",
     path: "/contact-us",

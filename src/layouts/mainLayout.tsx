@@ -12,10 +12,7 @@ export default function MainLayout({
       <Navbar />
       <div className="relative grid gap-8 min-h-[3000px]">
         <div className="fixed top-0 right-2 h-screen grid place-content-center z-50">
-          <SocialMedia
-            dir="col"
-            className="border border-primary rounded-full "
-          />
+          <SocialMedia dir="col" className="border border-primary" />
         </div>
         {children}
       </div>
