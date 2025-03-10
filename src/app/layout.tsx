@@ -4,7 +4,7 @@ import "./globals.scss";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import Loading from "./loading";
-import { AnimatePresence } from "motion/react";
+import PageWrapper from "@/components/pageWrapper";
 // import MainLayout from "@/layouts/mainLayout";
 
 const MainLayout = dynamic(() => import("@/layouts/mainLayout"));
@@ -34,12 +34,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <AnimatePresence>
-          {/* <Loading /> */}
-          <Suspense fallback={<Loading />}>
+        <Suspense fallback={<Loading />}>
+          <PageWrapper>
             <MainLayout>{children}</MainLayout>
-          </Suspense>
-        </AnimatePresence>
+          </PageWrapper>
+        </Suspense>
       </body>
     </html>
   );

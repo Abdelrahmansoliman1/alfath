@@ -1,8 +1,8 @@
 "use client";
 
+import Navbar from "@/components/common/Navbar";
 import { useMotionValueEvent, useScroll } from "motion/react";
 import { useState } from "react";
-import Navbar from "../common/Navbar";
 export default function HomeHeader() {
   const [outHeader, setOutHeader] = useState(false);
   const { scrollY } = useScroll();
