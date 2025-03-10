@@ -8,7 +8,7 @@ export default function MainLayout({
 }) {
   return (
     <div className="relative">
-      <div className="relative grid gap-8 ">
+      <div className="relative grid gap-10 ">
         <div className="absolute inset-y-0 right-2 ">
           <div className="sticky w-fit top-0 right-2 h-screen grid place-content-center z-30">
             <SocialMedia dir="col" className="border border-primary" />

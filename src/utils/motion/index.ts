@@ -19,12 +19,12 @@ export const slideIn = (
   delay: number = 0,
   duration: number = 0.7
 ) => ({
-  initial: {
+  hidden: {
     x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
     y: direction === "up" ? "100%" : direction === "down" ? "-100%" : 0,
     opacity: 0,
   },
-  animate: {
+  show: {
     x: 0,
     y: 0,
     opacity: 1,
@@ -38,7 +38,7 @@ export const slideIn = (
 });
 
 export const staggerContainer = (
-  staggerChildren: number,
+  staggerChildren?: number,
   delayChildren: number = 0
 ) => ({
   initial: {},
@@ -65,14 +65,38 @@ export const textVariant = (delay: number) => ({
     },
   },
 });
+export const textContainer = {
+  hidden: {
+    opacity: 0,
+  },
+  show: (i = 1) => ({
+    opacity: 1,
+    transition: { staggerChildren: 0.1, delayChildren: i * 0.1 },
+  }),
+};
+
+export const textVariant2 = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "tween",
+      ease: "easeIn",
+    },
+  },
+};
 
 export const zoomIn = (delay: number, duration: number) => ({
-  initial: {
+  hidden: {
     scale: 0,
     filter: "blur(10px)",
     opacity: 0,
   },
-  animate: {
+  show: {
     scale: 1,
     filter: "blur(0px)",
     opacity: 1,

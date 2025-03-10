@@ -1,7 +1,7 @@
 import { Button, ButtonProps } from "flowbite-react";
 
 const customTheme = {
-  base: "group flex items-stretch items-center justify-center p-0 text-center font-semibold relative focus:z-10 focus:outline-none transition-[color,background-color,border-color,text-decoration-color,fill,stroke,box-shadow] disabled:opacity-70 w-fit disabled:pointer-events-none border  min-w-[150px] shadow-main cursor-pointer",
+  base: "group flex items-stretch items-center justify-center p-0 text-center font-semibold relative focus:z-10 focus:outline-none transition-[color,background-color,border-color,text-decoration-color,fill,stroke,box-shadow] disabled:opacity-70 w-fit disabled:pointer-events-none border  min-w-[150px] shadow-lg cursor-pointer",
 
   color: {
     primary:

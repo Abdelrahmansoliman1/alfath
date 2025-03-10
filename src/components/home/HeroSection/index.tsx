@@ -11,7 +11,10 @@ export default function HeroSection() {
         <Image src={"bg-2.jpg"} priority fill alt="header background" />
         <div className="absolute inset-0 bg-black/30 "></div>
         <motion.div
-          {...zoomIn(0, 1)}
+          variants={zoomIn(0, 1)}
+          viewport={{ once: true, amount: 0.25 }}
+          initial="hidden"
+          whileInView="show"
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center"
         >
           <Image

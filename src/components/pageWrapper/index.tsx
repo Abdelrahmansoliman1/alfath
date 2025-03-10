@@ -11,7 +11,6 @@ export default function PageWrapper({
   return (
     <>
       <motion.div
-        // key={pathname}
         initial={{ opacity: 1, visibility: "visible" }}
         animate={{ opacity: 0, visibility: "hidden" }}
         exit={{ opacity: 1, visibility: "visible" }}
