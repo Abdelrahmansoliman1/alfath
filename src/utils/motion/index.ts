@@ -1,8 +1,8 @@
 export const fadeIn = (delay = 0) => ({
-  initial: {
+  hidden: {
     opacity: 0,
   },
-  animate: {
+  show: {
     opacity: 1,
     transition: {
       delay,
@@ -65,15 +65,15 @@ export const textVariant = (delay: number) => ({
     },
   },
 });
-export const textContainer = {
+export const textContainer = (delay: number = 0) => ({
   hidden: {
     opacity: 0,
   },
   show: (i = 1) => ({
     opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: i * 0.1 },
+    transition: { staggerChildren: delay + 0.1, delayChildren: i * 0.1 },
   }),
-};
+});
 
 export const textVariant2 = {
   hidden: {
@@ -108,3 +108,12 @@ export const zoomIn = (delay: number, duration: number) => ({
     },
   },
 });
+
+export const lineScaleX = {
+  animate: { scaleX: [1, 0.5, 1] },
+  transition: {
+    ease: "easeInOut",
+    duration: 1,
+    repeat: Infinity,
+  },
+};
