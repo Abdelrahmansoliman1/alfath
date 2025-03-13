@@ -20,6 +20,9 @@ export const plugins = [
       ".text-stroke-4": {
         "-webkit-text-stroke-width": "4px",
       },
+      ".text-stroke-white": {
+        "-webkit-text-stroke-color": "#fff",
+      },
     });
   }),
 ];

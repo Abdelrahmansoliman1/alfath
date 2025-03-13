@@ -63,7 +63,7 @@ export default function HomeAbout() {
               variants={slideIn("left", "tween", 1, 1)}
               className="w-fit"
             >
-              <Link href={"/about"}>
+              <Link href={"/about-us"}>
                 <PrimaryBtn id="about" color="white">
                   Read More
                 </PrimaryBtn>

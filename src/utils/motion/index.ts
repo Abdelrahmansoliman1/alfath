@@ -6,6 +6,7 @@ export const fadeIn = (delay = 0) => ({
     opacity: 1,
     transition: {
       delay,
+      duration: 0.7,
     },
   },
   exit: {
