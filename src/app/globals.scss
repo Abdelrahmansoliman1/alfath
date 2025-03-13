@@ -13,6 +13,7 @@
   --foreground: #171717;
   --primary: #63b779;
   --primary-20: #63b77920;
+  --gray: #8c8c8c;
 }
 
 // @media (prefers-color-scheme: dark) {
@@ -27,6 +28,13 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+}
+.direction-rtl {
+  direction: rtl;
+
+  > * {
+    direction: ltr;
+  }
 }
 
 .container {

@@ -59,7 +59,10 @@ export default function HomeAbout() {
               solutions, ensuring seamless operations for businesses worldwide.
             </motion.p>
 
-            <motion.div variants={slideIn("left", "tween", 1, 1)}>
+            <motion.div
+              variants={slideIn("left", "tween", 1, 1)}
+              className="w-fit"
+            >
               <Link href={"/about"}>
                 <PrimaryBtn id="about" color="white">
                   Read More
