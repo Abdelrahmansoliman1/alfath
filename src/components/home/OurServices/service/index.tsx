@@ -50,7 +50,7 @@ export default function ServiceItem({
       <div className={`${contentOrder} grid gap-5 place-content-start`}>
         <TitleSection
           title={title}
-          fontSize="text-6xl"
+          fontSize="text-4xl md:text-6xl"
           className="text-stroke"
         />
 

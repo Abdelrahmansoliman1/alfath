@@ -16,7 +16,7 @@ import { usePathname } from "next/navigation";
 import { SidebarDrawer } from "../sidebarDrawer";
 
 export default function Navbar({
-  bg = "after:bg-black",
+  bg = "after:bg-black/70",
   show,
 }: {
   bg?: string;
