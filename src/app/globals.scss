@@ -1,4 +1,6 @@
 @use "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
 @config "../../tailwind.config.js";
 @theme {
   --font-sans: var(--font-geist-sans);
@@ -26,7 +28,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lato", sans-serif;
   overflow-x: hidden;
 }
 .direction-rtl {
@@ -51,6 +53,13 @@ body {
   background-position: 100% 0, 100% 100%, 0 100%, 0 0;
   animation: l5 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
 }
+
+input,
+textarea {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
 @keyframes l5 {
   0% {
     background-position: 0 0, 100% 0, 100% 100%, 0 100%;

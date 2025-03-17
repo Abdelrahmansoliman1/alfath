@@ -13,7 +13,8 @@ export default function OurMission() {
       <p className="text-black/80">
         At Al-Fath for Shipping Agencies, our mission is to redefine excellence
         in global logistics and maritime services by providing efficient,
-        reliable, and cost-effective shipping solutions. We are committed to:
+        reliable, and cost-effective shipping solutions. <br />
+        We are committed to:
       </p>
 
       <ul className="grid gap-2 text-gray">

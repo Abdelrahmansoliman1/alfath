@@ -20,7 +20,7 @@ const FooterLinks = [
   },
 ];
 
-const contactUsList: {
+export const contactUsList: {
   icon: React.ReactNode;
   title: string;
   text: {
@@ -97,7 +97,7 @@ const contactUsList: {
 export default function Footer() {
   return (
     <>
-      <div className="-mb-[1px] md:-mb-4">
+      <div className="-mb-[1px] md:-mb-4 footer-wave">
         <Wave />
       </div>
       <div className="bg-primary pb-10 text-white">
