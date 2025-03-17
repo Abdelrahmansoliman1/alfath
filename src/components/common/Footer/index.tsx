@@ -97,7 +97,7 @@ export const contactUsList: {
 export default function Footer() {
   return (
     <>
-      <div className="-mb-[1px] md:-mb-4 footer-wave">
+      <div className="-mb-[1px] md:-mb-4 footer-wave ">
         <Wave />
       </div>
       <div className="bg-primary pb-10 text-white">
