@@ -16,7 +16,6 @@ export default function ContactForm() {
       if (addressRef.current && formRef.current) {
         const formHeight = formRef.current.getBoundingClientRect().height;
         const addressHeight = addressRef.current.getBoundingClientRect().height;
-        console.log(window.innerWidth);
         setMargin(window.innerWidth < 769 ? 0 : formHeight - addressHeight);
       }
     };
