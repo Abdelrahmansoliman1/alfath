@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import React from "react";
 
 const ContactForm = dynamic(() => import("@/components/contactUs/ContactForm"));
-const Map = dynamic(() => import("@/components/map"));
+const Map = dynamic(() => import("@/components/map"), { ssr: false });
 
 export default function ContactUs() {
   return (

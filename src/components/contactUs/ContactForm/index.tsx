@@ -17,18 +17,16 @@ export default function ContactForm() {
         const formHeight = formRef.current.getBoundingClientRect().height;
         const addressHeight = addressRef.current.getBoundingClientRect().height;
         // if (typeof window !== "undefined") {
-        //   setMargin(window.innerWidth < 769 ? 0 : formHeight - addressHeight);
+        setMargin(window.innerWidth < 769 ? 0 : formHeight - addressHeight);
         // } else {
-        setMargin(formHeight - addressHeight);
+        // setMargin(formHeight - addressHeight);
         // }
       }
     };
     setMarginFn();
-    if (typeof window !== "undefined")
-      window.addEventListener("resize", setMarginFn);
+    window.addEventListener("resize", setMarginFn);
     return () => {
-      if (typeof window !== "undefined")
-        window.removeEventListener("resize", setMarginFn);
+      window.removeEventListener("resize", setMarginFn);
     };
   }, []);
 
