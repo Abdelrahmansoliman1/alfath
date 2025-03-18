@@ -16,7 +16,11 @@ export default function ContactForm() {
       if (addressRef.current && formRef.current) {
         const formHeight = formRef.current.getBoundingClientRect().height;
         const addressHeight = addressRef.current.getBoundingClientRect().height;
-        setMargin(window.innerWidth < 769 ? 0 : formHeight - addressHeight);
+        if (typeof window !== "undefined") {
+          setMargin(window.innerWidth < 769 ? 0 : formHeight - addressHeight);
+        } else {
+          setMargin(formHeight - addressHeight);
+        }
       }
     };
     setMarginFn();
