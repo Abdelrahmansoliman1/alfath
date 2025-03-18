@@ -24,9 +24,11 @@ export default function ContactForm() {
       }
     };
     setMarginFn();
-    window.addEventListener("resize", setMarginFn);
+    if (typeof window !== "undefined")
+      window.addEventListener("resize", setMarginFn);
     return () => {
-      window.removeEventListener("resize", setMarginFn);
+      if (typeof window !== "undefined")
+        window.removeEventListener("resize", setMarginFn);
     };
   }, []);
 
