@@ -1,14 +1,40 @@
+"use client";
+
 import PrimaryBtn from "@/components/buttons/primaryBtn";
 import { contactUsList } from "@/components/common/Footer";
 import { InputTextarea } from "@/components/common/textareaInput";
 import { InputText } from "@/components/common/TextInput";
+import { useEffect, useRef, useState } from "react";
 
 export default function ContactForm() {
+  const addressRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLDivElement>(null);
+  const [margin, setMargin] = useState(0);
+
+  useEffect(() => {
+    const setMarginFn = () => {
+      if (addressRef.current && formRef.current) {
+        const formHeight = formRef.current.getBoundingClientRect().height;
+        const addressHeight = addressRef.current.getBoundingClientRect().height;
+        console.log(window.innerWidth);
+        setMargin(window.innerWidth < 769 ? 0 : formHeight - addressHeight);
+      }
+    };
+    setMarginFn();
+    window.addEventListener("resize", setMarginFn);
+    return () => {
+      window.removeEventListener("resize", setMarginFn);
+    };
+  }, []);
+
   return (
-    <div className="pt-[50px] w-full">
+    <div
+      className="pt-[50px] w-full relative z-10"
+      style={{ marginBottom: `-${margin}px` }}
+    >
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2">
         <div>
-          <div className="bg-white p-6 grow">
+          <div className="bg-white p-6 grow" ref={addressRef}>
             {contactUsList.map((item, index) => (
               <div key={index} className="flex items-start gap-2 mb-4">
                 <span className="text-xl p-2 bg-primary text-white rounded-full">
@@ -33,7 +59,7 @@ export default function ContactForm() {
           </div>
         </div>
 
-        <div className="bg-primary p-6 py-10 grow">
+        <div className="bg-primary p-6 py-10 grow" ref={formRef}>
           <form action="" className="flex flex-col gap-4">
             <InputText label="" name="name" placeholder="Enter your name" />
             <InputText

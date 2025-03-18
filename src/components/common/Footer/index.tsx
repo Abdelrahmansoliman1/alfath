@@ -96,7 +96,7 @@ export const contactUsList: {
 ];
 export default function Footer() {
   return (
-    <>
+    <div className="z-10 relative">
       <div className="-mb-[1px] md:-mb-4 footer-wave ">
         <Wave />
       </div>
@@ -170,6 +170,6 @@ export default function Footer() {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 }
