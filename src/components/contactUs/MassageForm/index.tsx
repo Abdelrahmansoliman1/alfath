@@ -13,7 +13,7 @@ import { render } from "@react-email/components";
 
 // const resend = new Resend("re_7gVuRAxj_MkyC7CAdgmZj5WVciBoP6dpo");
 
-const plunk = new Plunk("pk_6e6651e9f3a8237a40fa8a7a0cbf6bac4b6debfcc369a378");
+const plunk = new Plunk("sk_66671e2379bbb6ce88c8d2d013f02f458b6641ddc7f82e6d");
 
 export default function MassageForm() {
   const [loading, setLoading] = useState(false);
