@@ -3,13 +3,17 @@ import { InputTextarea } from "@/components/common/textareaInput";
 import { InputText } from "@/components/common/TextInput";
 import { useFormik } from "formik";
 import { useState } from "react";
-import { Resend } from "resend";
+// import { Resend } from "resend";
 import { object, string } from "yup";
 import Email from "./email";
+import Plunk from "@plunk/node";
+import { render } from "@react-email/components";
 
 // re_7gVuRAxj_MkyC7CAdgmZj5WVciBoP6dpo
 
-const resend = new Resend("re_7gVuRAxj_MkyC7CAdgmZj5WVciBoP6dpo");
+// const resend = new Resend("re_7gVuRAxj_MkyC7CAdgmZj5WVciBoP6dpo");
+
+const plunk = new Plunk("pk_6e6651e9f3a8237a40fa8a7a0cbf6bac4b6debfcc369a378");
 
 export default function MassageForm() {
   const [loading, setLoading] = useState(false);
@@ -29,13 +33,20 @@ export default function MassageForm() {
       }),
       onSubmit: async (values) => {
         setLoading(true);
-        const { email, message, name } = values;
+        const { email, message } = values;
         try {
-          await resend.emails.send({
-            from: `${name} <${email}>`,
+          // await resend.emails.send({
+          //   from: `${name} <${email}>`,
+          //   to: "alimohamed9788@gmail.com",
+          //   subject: "hello world",
+          //   react: <Email massage={message} />,
+          // });
+          const emailHtml = await render(<Email massage={message} />);
+          plunk.emails.send({
+            from: `${email}`,
             to: "alimohamed9788@gmail.com",
-            subject: "hello world",
-            react: <Email massage={message} />,
+            subject: "Hello world",
+            body: emailHtml,
           });
           setLoading(false);
         } catch (e) {
