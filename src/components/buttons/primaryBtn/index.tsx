@@ -1,7 +1,7 @@
-import { Button, ButtonProps } from "flowbite-react";
+import { Button, ButtonProps, Spinner } from "flowbite-react";
 
 const customTheme = {
-  base: "group flex items-stretch items-center justify-center p-0 text-center font-semibold relative focus:z-10 focus:outline-none transition-[color,background-color,border-color,text-decoration-color,fill,stroke,box-shadow] disabled:opacity-70 w-fit disabled:pointer-events-none border  min-w-[150px] shadow-lg cursor-pointer",
+  base: "group flex items-stretch items-center justify-center p-0 text-center font-semibold relative focus:z-10 focus:outline-none transition-[color,background-color,border-color,text-decoration-color,fill,stroke,box-shadow] disabled:opacity-70 w-fit disabled:pointer-events-none border  min-w-[150px] shadow-lg cursor-pointer h-11",
 
   color: {
     primary:
@@ -40,6 +40,7 @@ export default function PrimaryBtn({
   children,
   color = "primary",
   id,
+  isProcessing,
   ...props
 }: ButtonProps & {
   color?: colorTypes;
@@ -51,10 +52,20 @@ export default function PrimaryBtn({
       theme={customTheme}
       {...props}
       color={color}
-      disabled={props.isProcessing || props.disabled}
+      disabled={props.disabled}
+      className={`${props.className || ""} ${
+        isProcessing ? "cursor-wait pointer-events-none " : ""
+      }`}
       id={id}
     >
-      <span className="flex items-center gap-2 capitalize">{children}</span>
+      {isProcessing ? (
+        <Spinner
+          aria-label="Left-aligned spinner example"
+          className={"fill-primary"}
+        />
+      ) : (
+        <span className="flex items-center gap-2 capitalize">{children}</span>
+      )}
     </Button>
   );
 }

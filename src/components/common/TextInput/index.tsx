@@ -1,8 +1,8 @@
 "use client";
 
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Label, TextInput, TextInputProps } from "flowbite-react";
 import { forwardRef } from "react";
+import AlertError from "../AlertError";
 const themeInput = {
   base: "flex custom-helper-text",
   addon:
@@ -82,7 +82,6 @@ function InputTextRef(
           <TextInput
             {...props}
             theme={themeInput}
-            helperText={helperText}
             color={helperText ? "failure" : "gray"}
             className={` ${className || ""}`}
             type={props.type}
@@ -102,8 +101,7 @@ function InputTextRef(
               {rightElement}
             </span>
           )}
-          {/* {helperText && <AlertError text={helperText} />} */}
-          {/* {helperText && <p className="text-sm text-red-600"> {helperText} </p>} */}
+          {helperText && <AlertError text={helperText} />}
         </div>
       </div>
     </div>

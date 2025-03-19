@@ -31,7 +31,9 @@ export default function ContactUs() {
           </div>
 
           <ContactForm />
-          <Map />
+          <div className="h-screen  bg-white w-screen">
+            <Map />
+          </div>
         </div>
       </div>
     </>

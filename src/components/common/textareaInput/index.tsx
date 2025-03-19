@@ -2,13 +2,14 @@
 
 import { Label, Textarea, TextareaProps } from "flowbite-react";
 import { forwardRef } from "react";
+import AlertError from "../AlertError";
 const themeInput = {
   base: "block w-full rounded-lg border border-primary text-sm disabled:cursor-not-allowed disabled:opacity-50",
   colors: {
     gray: "border-primary bg-white text-gray-900 focus:border-cyan-500 focus:ring-cyan-500 ",
     info: "border-cyan-500 bg-cyan-50 text-cyan-900 placeholder-cyan-700 focus:border-cyan-500 focus:ring-cyan-500 ",
     failure:
-      "border-red-500 bg-red-50 text-red-900 placeholder-red-700 focus:border-red-500 focus:ring-red-500",
+      "border-red-500 bg-white text-red-900 placeholder-red-700 focus:border-red-500 focus:ring-red-500",
     warning:
       "border-yellow-500 bg-yellow-50 text-yellow-900 placeholder-yellow-700 focus:border-yellow-500 focus:ring-yellow-500 ",
     success:
@@ -48,20 +49,11 @@ function InputTextRef(
           <Textarea
             {...props}
             theme={themeInput}
-            helperText={helperText}
             color={helperText ? "failure" : "gray"}
             className={` ${className || ""}`}
-            onFocus={(e) =>
-              e.target.addEventListener(
-                "wheel",
-                function (e) {
-                  e.preventDefault();
-                },
-                { passive: false }
-              )
-            }
             ref={ref}
           />
+          {helperText && <AlertError text={helperText} />}
         </div>
       </div>
     </div>
