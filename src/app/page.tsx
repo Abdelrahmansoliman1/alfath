@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 const HeroSection = dynamic(() => import("@/components/home/HeroSection"));
 const About = dynamic(() => import("@/components/home/About"));
 const Services = dynamic(() => import("@/components/home/OurServices"));
+const WhyChooseUs = dynamic(() => import("@/components/home/WhyChooseUs"));
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <HeroSection />
       <About />
       <Services />
+      <WhyChooseUs />
     </div>
   );
 }
