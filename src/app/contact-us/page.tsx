@@ -1,6 +1,5 @@
 "use client";
 
-import Navbar from "@/components/common/Navbar";
 import dynamic from "next/dynamic";
 import React from "react";
 
@@ -10,8 +9,6 @@ const Map = dynamic(() => import("@/components/map"), { ssr: false });
 export default function ContactUs() {
   return (
     <>
-      <Navbar show={true} />
-
       <div
         className="pt-[150px] relative -mb-[20%] z-[1] grid place-content-center"
         style={{

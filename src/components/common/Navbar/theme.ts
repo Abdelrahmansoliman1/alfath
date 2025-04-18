@@ -10,7 +10,7 @@ export const theme = {
       off: "",
     },
     inner: {
-      base: "mx-auto flex flex-wrap items-center justify-between",
+      base: "mx-auto flex flex-wrap items-center  gap-10 lg:gap-20 py-4 md:py-6 justify-between md:justify-start md:space-x-10 ",
       fluid: {
         on: "",
         off: "container",

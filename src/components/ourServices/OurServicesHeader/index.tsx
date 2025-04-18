@@ -1,5 +1,3 @@
-import Navbar from "@/components/common/Navbar";
-
 type props = {
   title: string;
   bg?: string;
@@ -12,8 +10,6 @@ export default function OurServicesHeader({
 }: props) {
   return (
     <>
-      <Navbar show={true} />
-
       <div
         className="pb-[25%] relative -mb-[20%] -z-10 grid place-content-center"
         style={{

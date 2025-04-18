@@ -15,21 +15,13 @@ import { navItems } from "./constant";
 import { usePathname } from "next/navigation";
 import { SidebarDrawer } from "../sidebarDrawer";
 
-export default function Navbar({
-  bg = "after:bg-black/70",
-  show,
-}: {
-  bg?: string;
-  show?: boolean;
-}) {
+export default function Navbar() {
   const pathname = usePathname();
 
   return (
     <NavbarFlowbite
       theme={theme}
-      className={`after:absolute after:inset-0 after:w-full after: ${bg}  after:-z-10  text-black after:transition-all after:duration-300 after:origin-top ${
-        show ? "after:scale-y-100 shadow-sm" : "after:scale-y-0"
-      } `}
+      className={`after:absolute after:inset-0 after:w-full after: after:bg-black/70  after:-z-10  text-black after:transition-all after:duration-300 after:origin-top  `}
     >
       <NavbarBrand as={Link} href="https://flowbite-react.com">
         <Image
@@ -44,45 +36,45 @@ export default function Navbar({
       <SidebarDrawer />
       <NavbarCollapse>
         {navItems.map((item) => {
-          if (item.list) {
-            return (
-              <NavbarLink
-                key={item.path}
-                active={pathname.startsWith(item.path)}
-              >
-                <Dropdown
-                  key={item.label}
-                  label={item.label}
-                  inline
-                  className="cursor-pointer"
-                >
-                  {item.list.map((item) => {
-                    const itemActive = pathname === item.path;
+          // if (item.list) {
+          //   return (
+          //     <NavbarLink
+          //       key={item.path}
+          //       active={pathname.startsWith(item.path)}
+          //     >
+          //       <Dropdown
+          //         key={item.label}
+          //         label={item.label}
+          //         inline
+          //         className="cursor-pointer"
+          //       >
+          //         {item.list.map((item) => {
+          //           const itemActive = pathname === item.path;
 
-                    return (
-                      <DropdownItem
-                        key={item.path}
-                        as={Link}
-                        href={item.path}
-                        className="[&>li]:w-full"
-                      >
-                        <NavbarLink
-                          key={item.path}
-                          as={Link}
-                          href={item.path}
-                          className={`w-full ${
-                            itemActive ? "text-primary" : "text-black"
-                          }`}
-                        >
-                          {item.label}
-                        </NavbarLink>
-                      </DropdownItem>
-                    );
-                  })}
-                </Dropdown>
-              </NavbarLink>
-            );
-          }
+          //           return (
+          //             <DropdownItem
+          //               key={item.path}
+          //               as={Link}
+          //               href={item.path}
+          //               className="[&>li]:w-full"
+          //             >
+          //               <NavbarLink
+          //                 key={item.path}
+          //                 as={Link}
+          //                 href={item.path}
+          //                 className={`w-full ${
+          //                   itemActive ? "text-primary" : "text-black"
+          //                 }`}
+          //               >
+          //                 {item.label}
+          //               </NavbarLink>
+          //             </DropdownItem>
+          //           );
+          //         })}
+          //       </Dropdown>
+          //     </NavbarLink>
+          //   );
+          // }
 
           return (
             <NavbarLink
