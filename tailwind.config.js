@@ -7,6 +7,8 @@ import plugin from "tailwindcss/plugin";
 export const content = [
   // ...
   _content(),
+  "./src/**/*.{js,jsx,ts,tsx}",
+  "./public/index.html",
 ];
 export const plugins = [
   // ...

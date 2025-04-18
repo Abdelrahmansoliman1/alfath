@@ -48,11 +48,7 @@ export default function ServiceItem({
         </motion.div>
       </div>
       <div className={`${contentOrder} grid gap-5 place-content-start`}>
-        <TitleSection
-          title={title}
-          fontSize="text-4xl md:text-6xl"
-          className="text-stroke"
-        />
+        <TitleSection title={title} />
 
         <motion.p variants={fadeIn(0)} className="mt-5 text-gray">
           {desc}
