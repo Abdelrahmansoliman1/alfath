@@ -7,11 +7,11 @@ const Services = dynamic(() => import("@/components/home/OurServices"));
 
 export default function Home() {
   return (
-    <>
+    <div className="grid gap-10">
       {/* <HomeHeader /> */}
       <HeroSection />
       <About />
       <Services />
-    </>
+    </div>
   );
 }

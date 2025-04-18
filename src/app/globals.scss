@@ -42,7 +42,7 @@ body {
 }
 
 .container {
-  @apply px-4 xl:max-w-[80rem];
+  @apply px-4 xl:max-w-[80rem] mx-auto;
 }
 
 /* HTML: <div class="loader"></div> */

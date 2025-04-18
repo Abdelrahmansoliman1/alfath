@@ -1,3 +1,3 @@
 export default function OurServicesSection() {
-  return <div>OurServicesSection</div>;
+  return <div className="container">OurServicesSection</div>;
 }

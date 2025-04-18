@@ -8,7 +8,7 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="relative">
+    <div className="relative grid gap-10">
       <Navbar />
       <div className="relative grid gap-10 ">
         <div className="absolute inset-y-0 right-2 ">
