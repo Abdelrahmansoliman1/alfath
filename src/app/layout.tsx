@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.scss";
+import "./globals.css";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import Loading from "./loading";

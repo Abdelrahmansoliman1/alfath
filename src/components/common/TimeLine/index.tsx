@@ -1,16 +1,14 @@
 "use client";
 
 import {
-  Button,
   Timeline as TimelineComponent,
   TimelineBody,
   TimelineContent,
   TimelineItem,
   TimelinePoint,
-  TimelineTime,
   TimelineTitle,
 } from "flowbite-react";
-import { HiArrowNarrowRight, HiCalendar } from "react-icons/hi";
+import { timelineTheme } from "./theme";
 
 type TimeLineProps = {
   timeline: {
@@ -21,9 +19,9 @@ type TimeLineProps = {
 };
 export function TimeLine({ timeline }: TimeLineProps) {
   return (
-    <TimelineComponent horizontal>
+    <TimelineComponent horizontal theme={timelineTheme}>
       {timeline.map((item, index) => (
-        <TimelineItem key={index}>
+        <TimelineItem key={index} className="group">
           <TimelinePoint icon={item.icon} />
           <TimelineContent>
             <TimelineTitle>{item.title}</TimelineTitle>
