@@ -3,7 +3,7 @@ import { TimeLine } from "@/components/common/TimeLine";
 import UnderLine from "@/components/common/underLine";
 import TitleSection from "@/components/title";
 import { AiOutlineTruck } from "react-icons/ai";
-import { FaBoxes } from "react-icons/fa";
+import { CiBoxes } from "react-icons/ci";
 
 const timelineList = [
   {
@@ -13,7 +13,7 @@ const timelineList = [
       "Our global tie up will make your movement easier and convenient.",
   },
   {
-    icon: FaBoxes,
+    icon: CiBoxes,
     title: "Careful Handling of valuable goods",
     description:
       "We offer cost effective and customize logistics solution to meet Customers diverse needs.",
@@ -21,7 +21,7 @@ const timelineList = [
 ];
 export default function WhyChooseUs() {
   return (
-    <div className="grid gap-10 container">
+    <div className="grid gap-14 container">
       <TitleSection>
         <UnderLine>Why Choose Us</UnderLine>
       </TitleSection>

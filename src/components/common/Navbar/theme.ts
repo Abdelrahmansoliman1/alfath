@@ -1,6 +1,6 @@
 export const theme = {
   root: {
-    base: "fixed top-0 inset-x-0 bg-transparent z-50 drop px-2 py-4  sm:px-4",
+    base: "fixed top-0 inset-x-0 bg-transparent z-50 drop px-2 sm:px-4",
     rounded: {
       on: "rounded",
       off: "",

@@ -21,7 +21,7 @@ export default function Navbar() {
   return (
     <NavbarFlowbite
       theme={theme}
-      className={`after:absolute after:inset-0 after:w-full after: after:bg-black/70  after:-z-10  text-black after:transition-all after:duration-300 after:origin-top  `}
+      className={`after:absolute after:inset-0 after:w-full after: after:bg-black/70  after:-z-10  text-black after:transition-all after:duration-300 after:origin-top`}
     >
       <NavbarBrand as={Link} href="https://flowbite-react.com">
         <Image

@@ -24,7 +24,7 @@ export const timelineTheme = {
       },
     },
     point: {
-      horizontal: "flex items-center p-4 bg-white rounded-full ",
+      horizontal: "flex items-center ",
       line: "hidden h-0.5 w-full bg-primary sm:flex",
       marker: {
         base: {

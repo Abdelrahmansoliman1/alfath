@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 
-const AboutHero = dynamic(() => import("@/components/about/Hero"));
+const LetsFind = dynamic(() => import("@/components/about/LetsFind"));
+const HeroSection = dynamic(() => import("@/components/common/HeroSection"));
 const OurVision = dynamic(() => import("@/components/about/OurVision"));
 const OurMission = dynamic(() => import("@/components/about/OurMission"));
 
@@ -12,10 +13,13 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <>
-      <AboutHero />
-      <div className="grid grid-cols-1 md:grid-cols-2 container mx-auto -mt-[140px] z-10 relative">
-        <OurMission />
-        <OurVision />
+      <HeroSection title="About Us" image="bg-2.jpg" />
+      <LetsFind />
+      <div className="bg-[#f1f1f1] py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 container mx-auto  z-10 relative">
+          <OurMission />
+          <OurVision />
+        </div>
       </div>
     </>
   );

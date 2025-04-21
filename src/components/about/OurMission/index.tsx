@@ -1,3 +1,5 @@
+import { PiTarget } from "react-icons/pi";
+
 const ourMissionCommitments = [
   "Optimizing cargo handling and shipping operations with precision and speed.",
   "Enhancing global trade connectivity through seamless logistics solutions.",
@@ -8,8 +10,11 @@ const ourMissionCommitments = [
 
 export default function OurMission() {
   return (
-    <div className="bg-white py-14 px-6 grid gap-4 border border-primary">
-      <h3 className="text-4xl font-bold text-stroke text-white">Our Mission</h3>
+    <div className="grid gap-4">
+      <div className="bg-primary size-14 rounded-full grid place-content-center text-3xl text-white">
+        <PiTarget />
+      </div>
+      <h3 className="text-4xl font-bold text-primary">Our Mission</h3>
       <p className="text-black/80">
         At Al-Fath for Shipping Agencies, our mission is to redefine excellence
         in global logistics and maritime services by providing efficient,
