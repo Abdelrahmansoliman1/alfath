@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import UnderLine from "@/components/common/underLine";
 import TitleSection from "@/components/title";
 

@@ -1,4 +1,3 @@
-import Wave from "@/components/wave";
 import Image from "next/image";
 import SocialMedia from "../SocialMedia";
 import { navItems } from "../Navbar/constant";
