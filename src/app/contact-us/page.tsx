@@ -1,5 +1,6 @@
 "use client";
 
+import TitleSection from "@/components/title";
 import dynamic from "next/dynamic";
 import React from "react";
 
@@ -10,7 +11,7 @@ export default function ContactUs() {
   return (
     <>
       <div
-        className="pt-[150px] relative -mb-[20%] z-[1] grid place-content-center"
+        className="pt-[150px] relative -mb-10 z-[1] grid place-content-center"
         style={{
           backgroundImage: "url('/bg-2.jpg')",
           backgroundSize: "cover",
@@ -22,9 +23,7 @@ export default function ContactUs() {
         <div className="absolute inset-0 bg-black/30 z-[1]"></div>
         <div className="relative z-10">
           <div className="container mx-auto">
-            <h1 className="text-6xl font-bold text-transparent text-stroke text-stroke-white">
-              Contact Us
-            </h1>
+            <TitleSection title="Contact Us" className="text-white" />
           </div>
 
           <ContactForm />
