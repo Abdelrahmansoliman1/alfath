@@ -34,7 +34,7 @@ export default function OurServicesSection() {
         <PrimaryBtn
           id="ourServices"
           className="mx-auto"
-          //@ts-expect-error
+          //@ts-expect-error this error because of flowbite button type
           as={Link}
           href="/our-services"
         >
