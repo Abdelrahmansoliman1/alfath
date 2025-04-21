@@ -34,7 +34,7 @@ export default function OurServicesSection() {
         <PrimaryBtn
           id="ourServices"
           className="mx-auto"
-          //@ts-ignore
+          //@ts-expect-error
           as={Link}
           href="/our-services"
         >
