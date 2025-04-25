@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { fadeIn, slideIn, staggerContainer, zoomIn } from "@/utils/motion";
@@ -30,7 +31,7 @@ export default function ServiceItem({
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
-      className="grid grid-cols-1 md:grid-cols-2 gap-10"
+      className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
     >
       <div className={`${imgOrder} ${imageClassName} `}>
         <motion.div
