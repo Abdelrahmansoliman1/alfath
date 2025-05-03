@@ -10,7 +10,7 @@ type props = {
   children?: React.ReactNode;
 };
 export default function OurServicesHeader({
-  bg = "url('/bg-2.jpg')",
+  // bg = "url('/bg-2.jpg')",
   title,
   children,
 }: props) {
