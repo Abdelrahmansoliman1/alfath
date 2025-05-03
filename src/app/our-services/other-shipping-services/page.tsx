@@ -25,8 +25,8 @@ export default function OtherShippingServices() {
         </p>
         <ul className="grid gap-2 text-gray">
           {servicesList.map((item, index) => (
-            <li key={index} className="flex gap-2 text-white/80">
-              <span className="text-white">•</span>
+            <li key={index} className="flex gap-2 ">
+              <span>•</span>
               <p>{item}</p>
             </li>
           ))}

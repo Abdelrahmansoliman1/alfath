@@ -12,7 +12,7 @@ export default function ShippingAgency() {
   return (
     <>
       <OurServicesHeader title="Shipping Agency">
-        <p className="text-white max-w-[600px] mx-auto">
+        <p>
           The company provides 24/7 services that meet the highest international
           standards through a team of specialists dedicated to fulfilling the
           requirements of shipping lines (liners – NVOCC) that we represent in

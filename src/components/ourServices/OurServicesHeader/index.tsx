@@ -1,3 +1,9 @@
+"use client";
+import { navItems } from "@/components/common/Navbar/constant";
+import TitleSection from "@/components/title";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 type props = {
   title: string;
   bg?: string;
@@ -8,32 +14,42 @@ export default function OurServicesHeader({
   title,
   children,
 }: props) {
+  const pathname = usePathname();
+  const ourServicesList = navItems.find(
+    (item) => item.label === "Our Services"
+  )!.list;
   return (
     <>
       <div
-        className="pb-[25%] relative -mb-[20%] -z-10 grid place-content-center"
-        style={{
-          backgroundImage: bg,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-        }}
+        className="container grid grid-cols-1 md:grid-cols-[auto_1fr] pt-[150px] gap-10 items-center"
+        // style={{
+        //   backgroundImage: bg,
+        //   backgroundSize: "cover",
+        //   backgroundPosition: "center",
+        //   backgroundRepeat: "no-repeat",
+        //   backgroundAttachment: "fixed",
+        // }}
       >
-        <div className="absolute inset-0 bg-black/30 z-[-1]  "></div>
+        <ul className="gap-4 bg-[#f1f1f1] p-4 rounded-lg hidden md:grid">
+          {ourServicesList?.map((item, index) => {
+            return (
+              <li key={index}>
+                <Link
+                  href={item.path}
+                  className={`text-lg font-semibold hover:text-primary transition-colors ${
+                    item.path === pathname ? "text-primary" : ""
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+        <div>
+          <TitleSection title={title} className="text-left w-full" />
 
-        <div className="grid place-content-center place-items-center pt-[150px] pb-[50px]">
-          <h1 className="text-4xl font-bold text-transparent text-stroke text-stroke-white">
-            Our Services
-          </h1>
-          <div className="h-[1px] w-[300px] bg-white my-4" />
-          <h2 className="text-6xl max-w-[600px] text-balance text-center font-bold text-white">
-            {title}
-          </h2>
-        </div>
-
-        <div className="px-4 mx-auto py-[40px] text-white max-w-[600px] grid gap-4 bg-primary">
-          {children}
+          <div className="px-4 mx-auto py-[40px] grid gap-4">{children}</div>
         </div>
       </div>
     </>
