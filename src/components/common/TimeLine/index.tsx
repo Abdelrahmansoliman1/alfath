@@ -19,7 +19,7 @@ type TimeLineProps = {
 };
 export function TimeLine({ timeline }: TimeLineProps) {
   return (
-    <TimelineComponent horizontal theme={timelineTheme}>
+    <TimelineComponent theme={timelineTheme}>
       {timeline.map((item, index) => (
         <TimelineItem key={index} className="group">
           <TimelinePoint icon={item.icon} />

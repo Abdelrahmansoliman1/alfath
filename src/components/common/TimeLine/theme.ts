@@ -2,7 +2,7 @@ export const timelineTheme = {
   root: {
     direction: {
       horizontal: "sm:flex",
-      vertical: "relative border-l border-gray-200 dark:border-gray-700",
+      vertical: "relative border-l-2 border-primary dark:border-gray-700",
     },
   },
   item: {
@@ -36,7 +36,7 @@ export const timelineTheme = {
         icon: {
           base: "size-12",
           wrapper:
-            "absolute -left-3 flex size-12 items-center justify-center rounded-full text-primary bg-white rounded-full p-2 group-hover:bg-primary group-hover:text-white",
+            "absolute -left-6 flex size-12 items-center justify-center rounded-full text-primary bg-white rounded-full p-2 group-hover:bg-primary group-hover:text-white",
         },
       },
       vertical: "",

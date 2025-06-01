@@ -4,6 +4,7 @@ import UnderLine from "@/components/common/underLine";
 import TitleSection from "@/components/title";
 import { AiOutlineTruck } from "react-icons/ai";
 import { CiBoxes } from "react-icons/ci";
+import RequestQuoteForm from "./RequsetQuoteForm";
 
 const timelineList = [
   {
@@ -21,12 +22,18 @@ const timelineList = [
 ];
 export default function WhyChooseUs() {
   return (
-    <div className="grid gap-14 container">
+    <div className="grid gap-14 container ">
       <TitleSection>
         <UnderLine>Why Choose Us</UnderLine>
       </TitleSection>
 
-      <TimeLine timeline={timelineList} />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="p-4 ">
+          <TimeLine timeline={timelineList} />
+        </div>
+
+        <RequestQuoteForm />
+      </div>
     </div>
   );
 }
