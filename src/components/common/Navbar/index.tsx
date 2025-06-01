@@ -12,6 +12,7 @@ import { theme } from "./theme";
 import { navItems } from "./constant";
 import { usePathname } from "next/navigation";
 import { SidebarDrawer } from "../sidebarDrawer";
+import PrimaryBtn from "@/components/buttons/primaryBtn";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -31,8 +32,9 @@ export default function Navbar() {
           priority
         />
       </NavbarBrand>
+
       {/* <NavbarToggle /> */}
-      <SidebarDrawer />
+
       <NavbarCollapse>
         {navItems.map((item) => {
           // if (item.list) {
@@ -91,6 +93,12 @@ export default function Navbar() {
           );
         })}
       </NavbarCollapse>
+      <div className="flex gap-4 items-center ms-auto">
+        <Link href={"/?section=quote"}>
+          <PrimaryBtn id="GetAQuote">Request A Quote</PrimaryBtn>
+        </Link>
+        <SidebarDrawer />
+      </div>
     </NavbarFlowbite>
   );
 }
