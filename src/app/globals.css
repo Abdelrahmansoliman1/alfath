@@ -15,7 +15,8 @@
   :root {
     --background: #ffffff;
     --foreground: #171717;
-    --primary: #63b779;
+    /* --primary: #63b779; */
+    --primary: #0b2566;
     --primary-20: #63b77920;
     --gray: #8c8c8c;
   }
