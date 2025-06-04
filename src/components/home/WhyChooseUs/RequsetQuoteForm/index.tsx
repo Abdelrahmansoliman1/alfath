@@ -1,59 +1,137 @@
 import PrimaryBtn from "@/components/buttons/primaryBtn";
+import SelectInput from "@/components/common/SelectInput";
 import { InputTextarea } from "@/components/common/textareaInput";
 import { InputText } from "@/components/common/TextInput";
-import Email from "@/components/contactUs/MassageForm/email";
-import { render } from "@react-email/components";
 import { useFormik } from "formik";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { object, string } from "yup";
+import {
+  cargoOptions,
+  containerTypeOptions,
+  formKeys,
+  polOptions,
+  services,
+} from "./constant";
+import { useSearchParams } from "next/navigation";
 
 export default function RequestQuoteForm() {
+  const searchparams = useSearchParams();
+  const section = searchparams.get("section");
   const [loading, setLoading] = useState(false);
-  const { handleBlur, handleChange, values, touched, errors, handleSubmit } =
-    useFormik({
-      initialValues: {
-        name: "",
-        email: "",
-        message: "",
-      },
-      validationSchema: object({
-        name: string().required("Name is required"),
-        email: string().email("Invalid email").required("Email is required"),
-        message: string()
-          .required("Message is required")
-          .min(10, "The message must be at least 10 characters"),
-      }),
-      onSubmit: async (values) => {
-        setLoading(true);
-        const { email, message } = values;
-        try {
-          // await resend.emails.send({
-          //   from: `${name} <${email}>`,
-          //   to: "alimohamed9788@gmail.com",
-          //   subject: "hello world",
-          //   react: <Email massage={message} />,
-          // });
-          const emailHtml = await render(<Email massage={message} />);
-          //   plunk.emails.send({
-          //     from: `${email}`,
-          //     to: "alimohamed9788@gmail.com",
-          //     subject: "Hello world",
-          //     body: emailHtml,
-          //   });
-          setLoading(false);
-        } catch (e) {
-          setLoading(false);
-          console.log(e);
-        }
-        console.log(values);
-      },
-    });
+  const {
+    handleBlur,
+    handleChange,
+    values,
+    touched,
+    errors,
+    setFieldValue,
+    handleSubmit,
+  } = useFormik({
+    initialValues: formKeys,
+    validationSchema: object({
+      name: string().required("Name is required"),
+      email: string().email("Invalid email").required("Email is required"),
+      message: string()
+        .required("Message is required")
+        .min(10, "The message must be at least 10 characters"),
+      phone: string()
+        .required("Phone number is required")
+        .min(10, "The phone number must be at least 10 characters")
+        .max(11, "The phone number must be at most 10 characters"),
+      services: string().required("Services is required"),
+      pol: string().required("POL is required"),
+      cargo: string().required("Cargo is required"),
+      containerType: string().required("Container Type is required"),
+    }),
+    onSubmit: async (values) => {
+      setLoading(true);
+      // const { email, message } = values;
+      try {
+        // await resend.emails.send({
+        //   from: `${name} <${email}>`,
+        //   to: "alimohamed9788@gmail.com",
+        //   subject: "hello world",
+        //   react: <Email massage={message} />,
+        // });
+        // const emailHtml = await render(<Email massage={message} />);
+        //   plunk.emails.send({
+        //     from: `${email}`,
+        //     to: "alimohamed9788@gmail.com",
+        //     subject: "Hello world",
+        //     body: emailHtml,
+        //   });
+        setLoading(false);
+      } catch (e) {
+        setLoading(false);
+        console.log(e);
+      }
+      console.log(values);
+    },
+  });
+
+  useEffect(() => {
+    if (section) {
+      const form = document.getElementById(
+        "requestQuoteForm"
+      ) as HTMLFormElement;
+
+      window.scrollTo({
+        top: form.offsetTop,
+        behavior: "smooth",
+      });
+
+      const newUrl = new URL(window.location.href);
+      newUrl.searchParams.delete("section");
+      window.history.replaceState({}, document.title, newUrl.toString());
+    }
+  }, [section]);
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col w-full rounded-2xl max-w-[400px] gap-4 bg-primary p-6 py-10 mx-auto "
+      className="flex flex-col w-full rounded-2xl max-w-[500px] gap-4 bg-[#f5f5f5] p-6 py-10 mx-auto "
+      id="requestQuoteForm"
     >
+      <div className="grid gap-2 grid-cols-1 lg:grid-cols-2">
+        <SelectInput
+          error={errors.services || ""}
+          label=""
+          name="services"
+          options={services}
+          value={values.services}
+          setValue={setFieldValue}
+          placeholder="select services"
+        />
+        <SelectInput
+          error={errors.pol || ""}
+          label=""
+          name="pol"
+          options={polOptions}
+          value={values.pol}
+          setValue={setFieldValue}
+          placeholder="select POL"
+        />
+      </div>
+      <div className="grid gap-2 grid-cols-1 lg:grid-cols-2">
+        <SelectInput
+          error={errors.cargo || ""}
+          label=""
+          name="cargo"
+          options={cargoOptions}
+          value={values.cargo}
+          setValue={setFieldValue}
+          placeholder="select cargo"
+        />
+        <SelectInput
+          error={errors.containerType || ""}
+          label=""
+          name="containerType"
+          options={containerTypeOptions}
+          value={values.containerType}
+          setValue={setFieldValue}
+          placeholder="select container Type"
+        />
+      </div>
       <InputText
         label=""
         name="name"
@@ -73,6 +151,16 @@ export default function RequestQuoteForm() {
         helperText={(touched.email && errors.email) || ""}
         value={values.email}
       />
+      <InputText
+        label=""
+        type="phone"
+        name="phone"
+        placeholder="Enter your phone"
+        onChange={handleChange}
+        onBlur={handleBlur}
+        helperText={(touched.phone && errors.phone) || ""}
+        value={values.phone}
+      />
       <InputTextarea
         name="message"
         placeholder="Enter your message"
@@ -82,14 +170,8 @@ export default function RequestQuoteForm() {
         value={values.message}
         rows={4}
       />
-      <PrimaryBtn
-        id="contact"
-        fullSized
-        color="white"
-        type="submit"
-        isProcessing={loading}
-      >
-        Send Message
+      <PrimaryBtn id="contact" fullSized type="submit" isProcessing={loading}>
+        Send
       </PrimaryBtn>
     </form>
   );

@@ -5,23 +5,23 @@ const customTheme = {
 
   color: {
     primary:
-      "bg-primary enabled:hover:bg-primary/10 enabled:hover:text-primary border-primary  text-white",
+      "bg-primary hover:bg-primary/10 hover:text-primary border-primary  text-white",
     white:
-      "bg-white enabled:hover:bg-transparent enabled:hover:text-white border-white  text-primary",
+      "bg-white hover:bg-transparent hover:text-white border-white  text-primary",
     primaryOutLine:
-      "bg-transparent enabled:hover:bg-primary enabled:hover:text-white border-primary  text-primary",
+      "bg-transparent hover:bg-primary hover:text-white border-primary  text-primary",
     primaryCancel:
       "bg-white  border-primary text-primary opacity-50 hover:opacity-100",
     grayOutLine:
       "bg-transparent  border-dark-gray text-dark-gray opacity-50 hover:opacity-100 shadow-sm",
     success:
-      "bg-success-color enabled:hover:bg-success-color/10 enabled:hover:text-success-color border-success-color text-white",
+      "bg-success-color hover:bg-success-color/10 hover:text-success-color border-success-color text-white",
     successOutLine:
-      "enabled:hover:bg-success-color bg-success-color/10 text-success-color border-success-color  enabled:hover:text-white",
+      "hover:bg-success-color bg-success-color/10 text-success-color border-success-color  hover:text-white",
     failure:
-      "bg-error-color enabled:hover:bg-error-color/10 enabled:hover:text-error-color border-error-color  text-white",
+      "bg-error-color hover:bg-error-color/10 hover:text-error-color border-error-color  text-white",
     failureOutLine:
-      "enabled:hover:bg-error-color bg-error-color/10 text-error-color border-error-color  enabled:hover:text-white",
+      "hover:bg-error-color bg-error-color/10 text-error-color border-error-color  hover:text-white",
     transparent: "text-primary border-0",
   },
   disabled: "cursor-wait opacity-50 !bg-gray pointer-events-none",
