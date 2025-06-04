@@ -13,6 +13,8 @@ import {
   services,
 } from "./constant";
 import { useSearchParams } from "next/navigation";
+import TitleSection from "@/components/title";
+import UnderLine from "@/components/common/underLine";
 
 export default function RequestQuoteForm() {
   const searchparams = useSearchParams();
@@ -92,7 +94,10 @@ export default function RequestQuoteForm() {
       className="flex flex-col w-full rounded-2xl max-w-[500px] gap-4 bg-[#f5f5f5] p-6 py-10 mx-auto "
       id="requestQuoteForm"
     >
-      <div className="grid gap-2 grid-cols-1 lg:grid-cols-2">
+      <TitleSection>
+        <UnderLine>REQUEST A QUOTE</UnderLine>
+      </TitleSection>
+      <div className="grid gap-2 grid-cols-1 lg:grid-cols-2 mt-8">
         <SelectInput
           error={errors.services || ""}
           label=""
