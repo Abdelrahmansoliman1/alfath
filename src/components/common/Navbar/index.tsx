@@ -10,12 +10,12 @@ import {
 import Image from "next/image";
 import { theme } from "./theme";
 import { navItems } from "./constant";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import { SidebarDrawer } from "../sidebarDrawer";
 import PrimaryBtn from "@/components/buttons/primaryBtn";
 
 export default function Navbar() {
-  const pathname = usePathname();
+  // const pathname = usePathname();
 
   return (
     <NavbarFlowbite
@@ -82,11 +82,11 @@ export default function Navbar() {
               key={item.path}
               as={Link}
               href={item.path}
-              active={
-                item.label === "Home"
-                  ? pathname === "/"
-                  : pathname.includes(item.path)
-              }
+              // active={
+              //   item.label === "Home"
+              //     ? pathname === "/"
+              //     : pathname.includes(item.path)
+              // }
             >
               {item.label}
             </NavbarLink>
