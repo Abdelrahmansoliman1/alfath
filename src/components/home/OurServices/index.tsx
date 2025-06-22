@@ -23,6 +23,7 @@ export default function OurServicesSection() {
         autoPlay
         loop
         muted
+        controls={false}
         className="w-full h-full object-cover absolute inset-0"
       />
       <div className="container py-10 grid gap-4  text-center relative z-10 ">
