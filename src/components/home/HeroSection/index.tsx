@@ -17,6 +17,7 @@ export default function HeroSection() {
           loop
           muted
           controls={false}
+          playsInline
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/30 "></div>
