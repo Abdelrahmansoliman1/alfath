@@ -32,7 +32,7 @@ export const theme = {
     base: "block py-2 pl-3 pr-4 md:p-0 text-white capitalize text-lg font-medium",
     active: {
       on: "text-primary",
-      off: "border-b md:border-0 hover:text-primary md:hover:bg-transparent ",
+      off: "border-b md:border-0 relative after:absolute after:-bottom-2 after:left-0 after:w-full after:h-0.5 after:bg-primary md:hover:bg-transparent after:scale-x-0 after:origin-center after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-100",
     },
     disabled: {
       on: "text-gray-400 hover:cursor-not-allowed ",
