@@ -10,7 +10,14 @@ export default function HeroSection() {
   return (
     <div className="grid text-gray-400 h-screen bg-black">
       <div className="h-screen relative">
-        <Image src={"bg-2.jpg"} priority fill alt="header background" />
+        {/* <Image src={"bg-2.jpg"} priority fill alt="header background" /> */}
+        <video
+          src="/hero-video.mp4"
+          autoPlay
+          loop
+          muted
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-black/30 "></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center grid gap-10 place-items-center">
           <motion.div
