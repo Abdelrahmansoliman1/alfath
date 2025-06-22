@@ -18,7 +18,13 @@ export default function OurServicesSection() {
         color: "white",
       }}
     >
-      <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
+      <video
+        src="/hero-video.mp4"
+        autoPlay
+        loop
+        muted
+        className="w-full h-full object-cover absolute inset-0"
+      />
       <div className="container py-10 grid gap-4  text-center relative z-10 ">
         <TitleSection>
           <UnderLine>Our Services</UnderLine>
