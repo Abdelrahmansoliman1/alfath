@@ -8,6 +8,8 @@ const customTheme = {
       "bg-primary hover:bg-primary/10 hover:text-primary border-primary  text-white",
     white:
       "bg-white hover:bg-transparent hover:text-white border-white  text-primary",
+    whiteOutLine:
+      "bg-transparent hover:bg-white hover:text-primary border-white  text-white",
     primaryOutLine:
       "bg-transparent hover:bg-primary hover:text-white border-primary  text-primary",
     primaryCancel:

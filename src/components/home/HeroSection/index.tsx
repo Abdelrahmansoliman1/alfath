@@ -36,19 +36,18 @@ export default function HeroSection() {
               priority
             />
           </motion.div>
-          <p className="text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            quasi officiis aspernatur doloribus nobis, temporibus maxime omnis
-            eum fugiat, ab voluptatibus eius consequuntur, laborum officia
-            quisquam aut ut optio explicabo?
-          </p>
+          <h3 className="text-white text-3xl">
+            Trusted Partners in Every Port.
+          </h3>
           <div className="flex gap-4">
             <Link href={"/about-us"}>
-              <PrimaryBtn id="AboutUs">About Us</PrimaryBtn>
+              <PrimaryBtn id="AboutUs" color="white">
+                About Us
+              </PrimaryBtn>
             </Link>
 
             <Link href={"/?section=quote"}>
-              <PrimaryBtn id="GetAQuote" color="primaryOutLine">
+              <PrimaryBtn id="GetAQuote" color="whiteOutLine">
                 Request A Quote
               </PrimaryBtn>
             </Link>

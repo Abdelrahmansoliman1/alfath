@@ -8,4 +8,5 @@ type colorTypes =
   | "failureOutLine"
   | "transparent"
   | "white"
-  | "grayOutLine";
+  | "grayOutLine"
+  | "whiteOutLine";
