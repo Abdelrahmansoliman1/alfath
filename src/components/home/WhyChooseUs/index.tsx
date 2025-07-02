@@ -21,7 +21,7 @@ const timelineList = [
     title: "Reliable & Timely Delivery",
     description: (
       <span>
-        We’re committed to delivering your cargo on time, every
+        We&apos;re committed to delivering your cargo on time, every
         time&#9866;backed by a professional logistics team and trusted partners.
       </span>
     ),
@@ -31,7 +31,7 @@ const timelineList = [
     title: "Customized Shipping Solutions",
     description: (
       <span>
-        Whether it's dry bulk, general cargo, or containers&#9866;we tailor our
+        Whether it&apos;s dry bulk, general cargo, or containers&#9866;we tailor our
         services to fit your specific needs with precision and flexibility.
       </span>
     ),
