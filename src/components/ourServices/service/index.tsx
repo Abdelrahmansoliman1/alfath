@@ -55,16 +55,21 @@ export default function ServiceItem({
           {desc}
         </motion.p>
 
-        <motion.div variants={slideIn("left", "tween", 1, 1)} className="w-fit">
-          <PrimaryBtn
-            id="about"
-            //@ts-expect-error Link component is not compatible with PrimaryBtn's 'as' prop
-            as={Link}
-            href={goTo}
+        {goTo && (
+          <motion.div
+            variants={slideIn("left", "tween", 1, 1)}
+            className="w-fit"
           >
-            Read More
-          </PrimaryBtn>
-        </motion.div>
+            <PrimaryBtn
+              id="about"
+              //@ts-expect-error Link component is not compatible with PrimaryBtn's 'as' prop
+              as={Link}
+              href={goTo}
+            >
+              Read More
+            </PrimaryBtn>
+          </motion.div>
+        )}
       </div>
     </motion.div>
   );
