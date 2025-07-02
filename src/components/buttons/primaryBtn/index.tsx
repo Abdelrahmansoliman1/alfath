@@ -4,8 +4,7 @@ const customTheme = {
   base: "group flex items-stretch items-center justify-center p-0 text-center font-semibold relative focus:z-10 focus:outline-none transition-[color,background-color,border-color,text-decoration-color,fill,stroke,box-shadow] disabled:opacity-70 w-fit disabled:pointer-events-none border  min-w-[150px] shadow-lg cursor-pointer h-11",
 
   color: {
-    primary:
-      "bg-primary hover:bg-primary/10 hover:text-primary border-primary  text-white",
+    primary: "bg-primary hover:bg-primary/20  border-primary  text-white",
     white:
       "bg-white hover:bg-transparent hover:text-white border-white  text-primary",
     whiteOutLine:

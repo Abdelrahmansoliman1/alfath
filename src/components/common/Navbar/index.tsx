@@ -93,7 +93,7 @@ export default function Navbar() {
           );
         })}
       </NavbarCollapse>
-      <div className="flex gap-4 items-center ms-auto">
+      <div className="flex gap-4 items-center ms-auto grow justify-between sm:justify-end">
         <Link href={"/?section=quote"}>
           <PrimaryBtn id="GetAQuote">Request A Quote</PrimaryBtn>
         </Link>

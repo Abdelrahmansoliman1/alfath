@@ -22,9 +22,9 @@ export const theme = {
   },
   collapse: {
     base: "w-full lg:block lg:w-auto ",
-    list: "mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium",
+    list: "mt-4  flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium",
     hidden: {
-      on: "hidden",
+      on: "hidden !mx-0",
       off: "",
     },
   },

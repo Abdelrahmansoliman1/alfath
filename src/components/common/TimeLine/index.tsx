@@ -14,7 +14,7 @@ type TimeLineProps = {
   timeline: {
     icon?: React.FC<React.SVGProps<SVGSVGElement>> | undefined;
     title: string;
-    description: string;
+    description: React.ReactNode;
   }[];
 };
 export function TimeLine({ timeline }: TimeLineProps) {

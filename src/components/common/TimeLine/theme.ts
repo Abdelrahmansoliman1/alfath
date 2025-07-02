@@ -2,7 +2,7 @@ export const timelineTheme = {
   root: {
     direction: {
       horizontal: "sm:flex",
-      vertical: "relative border-l-2 border-primary dark:border-gray-700",
+      vertical: "relative border-l-2 border-primary pl-3 dark:border-gray-700",
     },
   },
   item: {
