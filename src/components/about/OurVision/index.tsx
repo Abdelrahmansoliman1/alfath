@@ -1,8 +1,8 @@
 import { BsEye } from "react-icons/bs";
 
 const ourVision = [
-  "To be a globally recognized leader in shipping and logistics, setting the benchmark for efficiency, reliability, and innovation. We aspire to revolutionize maritime services by seamlessly connecting global trade, optimizing cargo operations, and embracing cutting-edge technology.",
-  "Our commitment to sustainability, transparency, and strategic partnerships ensures long-term success for our clients while upholding the highest international standards",
+  "To become the most trusted and forward-thinking shipping agency, recognized globally for our superior service, unwavering integrity, and steadfast commitment to our clients’ success.",
+  "We strive to lead the future of logistics by integrating innovation, personalized support, and operational excellence—simplifying global trade and delivering lasting value.",
 ];
 
 export default function OurVision() {

@@ -15,12 +15,22 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <div className="relative  py-[100px] pt-[150px]">
-      <Image
+      {/* <Image
         src={image}
         priority
         fill
         alt="header background"
         className="sticky top-0 left-0 object-cover"
+      /> */}
+
+      <video
+        src="/hero-video.mp4"
+        autoPlay
+        loop
+        muted
+        controls={false}
+        playsInline
+        className="w-full h-full object-cover absolute inset-0"
       />
 
       <div className="container">
