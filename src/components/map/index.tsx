@@ -16,7 +16,7 @@ import "leaflet/dist/leaflet.css";
 
 export default function Map() {
   return (
-    <div className="w-screen h-screen overflow-hidden relative z-0">
+    <div className="w-full h-full overflow-hidden relative z-0">
       <MapContainer
         center={[31.205753, 29.924526]}
         zoom={13}

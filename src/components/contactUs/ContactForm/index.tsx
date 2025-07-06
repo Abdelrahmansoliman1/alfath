@@ -5,32 +5,28 @@ import { useEffect, useRef, useState } from "react";
 import MassageForm from "../MassageForm";
 
 export default function ContactForm() {
-  const addressRef = useRef<HTMLDivElement>(null);
-  const formRef = useRef<HTMLDivElement>(null);
-  const [margin, setMargin] = useState(0);
+  // const addressRef = useRef<HTMLDivElement>(null);
+  // const formRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const setMarginFn = () => {
-      if (addressRef.current && formRef.current) {
-        const formHeight = formRef.current.getBoundingClientRect().height;
-        const addressHeight = addressRef.current.getBoundingClientRect().height;
-        setMargin(window.innerWidth < 769 ? 0 : formHeight - addressHeight);
-      }
-    };
-    setMarginFn();
-    window.addEventListener("resize", setMarginFn);
-    return () => {
-      window.removeEventListener("resize", setMarginFn);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const setMarginFn = () => {
+  //     if (addressRef.current && formRef.current) {
+  //       const formHeight = formRef.current.getBoundingClientRect().height;
+  //       const addressHeight = addressRef.current.getBoundingClientRect().height;
+  //       setMargin(window.innerWidth < 769 ? 0 : formHeight - addressHeight);
+  //     }
+  //   };
+  //   setMarginFn();
+  //   window.addEventListener("resize", setMarginFn);
+  //   return () => {
+  //     window.removeEventListener("resize", setMarginFn);
+  //   };
+  // }, []);
 
   return (
-    <div
-      className="pt-[50px]  relative z-10 container mx-auto grid grid-cols-1 md:grid-cols-[1fr_500px]"
-      style={{ marginBottom: `-${margin}px` }}
-    >
+    <div className="py-[50px]  relative z-10 mx-auto grid grid-cols-1 md:grid-cols-[1fr_500px]">
       <div className="h-fit">
-        <div className="bg-white p-6" ref={addressRef}>
+        <div className="bg-white p-6">
           {contactUsList.map((item, index) => (
             <div key={index} className="flex items-start gap-2 mb-4">
               <span className="text-xl p-2 bg-primary text-white rounded-full">
@@ -55,7 +51,7 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div ref={formRef}>
+      <div>
         <MassageForm />
       </div>
     </div>

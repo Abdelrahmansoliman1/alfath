@@ -11,7 +11,7 @@ export default function OurVision() {
       <div className="bg-primary size-14 rounded-full grid place-content-center text-3xl text-white">
         <BsEye />
       </div>
-      <h3 className="text-4xl font-bold text-primary ">Our Vision</h3>
+      <h3 className="text-4xl font-bold text-primary">Our Vision</h3>
       {ourVision.map((item, index) => (
         <p key={index}>{item}</p>
       ))}
