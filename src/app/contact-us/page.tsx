@@ -1,7 +1,6 @@
 "use client";
 
 import HeroSection from "@/components/common/HeroSection";
-import TitleSection from "@/components/title";
 import dynamic from "next/dynamic";
 import React from "react";
 

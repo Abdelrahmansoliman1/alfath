@@ -1,4 +1,3 @@
-import Image from "next/image";
 import TitleSection from "@/components/title";
 
 type HeroSectionProps = {
@@ -8,11 +7,7 @@ type HeroSectionProps = {
   children?: React.ReactNode;
 };
 
-export default function HeroSection({
-  title,
-  image,
-  children,
-}: HeroSectionProps) {
+export default function HeroSection({ title, children }: HeroSectionProps) {
   return (
     <div className="relative  py-[100px] pt-[150px]">
       {/* <Image

@@ -1,7 +1,6 @@
 "use client";
 
 import { contactUsList } from "@/components/common/Footer";
-import { useEffect, useRef, useState } from "react";
 import MassageForm from "../MassageForm";
 
 export default function ContactForm() {
