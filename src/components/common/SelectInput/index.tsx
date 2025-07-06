@@ -72,8 +72,10 @@ export default function SelectInput({
         label={""}
         renderTrigger={() => (
           <div className="relative flex items-center justify-between gap-2 rounded-full border border-border bg-white px-4 py-2">
-            <span className="text-sm font-medium">
-              {placeholder || "select items"}
+            <span className="text-sm font-medium line-clamp-1">
+              {options.find((item) => item.value === value)?.label ||
+                placeholder ||
+                "select items"}
             </span>
             <FaChevronDown className="size-4" />
             {error && <AlertError text={error} />}

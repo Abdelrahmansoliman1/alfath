@@ -10,6 +10,7 @@ import {
   containerTypeOptions,
   formKeys,
   polOptions,
+  ports,
   services,
 } from "./constant";
 import { useSearchParams } from "next/navigation";
@@ -42,6 +43,7 @@ export default function RequestQuoteForm() {
         .max(11, "The phone number must be at most 10 characters"),
       services: string().required("Services is required"),
       pol: string().required("POL is required"),
+      pod: string().required("POD is required"),
       cargo: string().required("Cargo is required"),
       containerType: string().required("Container Type is required"),
     }),
@@ -88,16 +90,18 @@ export default function RequestQuoteForm() {
     }
   }, [section]);
 
+  console.log(values);
+
   return (
     <form
       onSubmit={handleSubmit}
       className="flex flex-col w-full rounded-2xl max-w-[500px] gap-4 bg-[#f5f5f5] p-6 py-10 mx-auto "
       id="requestQuoteForm"
     >
-      <TitleSection>
+      <TitleSection className="mb-8">
         <UnderLine>REQUEST A QUOTE</UnderLine>
       </TitleSection>
-      <div className="grid gap-2 grid-cols-1 lg:grid-cols-2 mt-8">
+      <div className="grid gap-2 grid-cols-1 lg:grid-cols-2 ">
         <SelectInput
           error={errors.services || ""}
           label=""
@@ -111,13 +115,22 @@ export default function RequestQuoteForm() {
           error={errors.pol || ""}
           label=""
           name="pol"
-          options={polOptions}
+          options={ports}
           value={values.pol}
           setValue={setFieldValue}
           placeholder="select POL"
         />
       </div>
       <div className="grid gap-2 grid-cols-1 lg:grid-cols-2">
+        <SelectInput
+          error={errors.pod || ""}
+          label=""
+          name="pod"
+          options={ports}
+          value={values.pod}
+          setValue={setFieldValue}
+          placeholder="select pod"
+        />
         <SelectInput
           error={errors.cargo || ""}
           label=""
@@ -127,16 +140,16 @@ export default function RequestQuoteForm() {
           setValue={setFieldValue}
           placeholder="select cargo"
         />
-        <SelectInput
-          error={errors.containerType || ""}
-          label=""
-          name="containerType"
-          options={containerTypeOptions}
-          value={values.containerType}
-          setValue={setFieldValue}
-          placeholder="select container Type"
-        />
       </div>
+      <SelectInput
+        error={errors.containerType || ""}
+        label=""
+        name="containerType"
+        options={containerTypeOptions}
+        value={values.containerType}
+        setValue={setFieldValue}
+        placeholder="select container Type"
+      />
       <InputText
         label=""
         name="name"

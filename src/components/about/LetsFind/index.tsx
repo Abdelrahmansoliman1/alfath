@@ -14,7 +14,9 @@ export default function LetsFind() {
       </h2> */}
       <div className="overflow-hidden rounded-2xl relative">
         <Image
-          src={"./bg-2.jpg"}
+          src={
+            "./services/cargo-container-ship-top-view-container-ship-runn-2024-12-08-00-24-12-utc.jpg"
+          }
           alt="About us"
           fill
           priority
