@@ -2,21 +2,14 @@ import PrimaryBtn from "@/components/buttons/primaryBtn";
 import { InputTextarea } from "@/components/common/textareaInput";
 import { InputText } from "@/components/common/TextInput";
 import { useFormik } from "formik";
-import { useState } from "react";
-// import { Resend } from "resend";
+import { useRef, useState } from "react";
 import { object, string } from "yup";
-import Email from "./email";
-import Plunk from "@plunk/node";
-import { render } from "@react-email/components";
-
-// re_7gVuRAxj_MkyC7CAdgmZj5WVciBoP6dpo
-
-// const resend = new Resend("re_7gVuRAxj_MkyC7CAdgmZj5WVciBoP6dpo");
-
-const plunk = new Plunk("sk_66671e2379bbb6ce88c8d2d013f02f458b6641ddc7f82e6d");
+import emailjs from "@emailjs/browser";
+import { errorAlert, successAlert } from "@/utils/alert";
 
 export default function MassageForm() {
   const [loading, setLoading] = useState(false);
+  const form = useRef<HTMLFormElement>(null);
   const { handleBlur, handleChange, values, touched, errors, handleSubmit } =
     useFormik({
       initialValues: {
@@ -33,23 +26,23 @@ export default function MassageForm() {
       }),
       onSubmit: async (values) => {
         setLoading(true);
-        const { email, message } = values;
+        // const { email, message } = values;
+
         try {
-          // await resend.emails.send({
-          //   from: `${name} <${email}>`,
-          //   to: "alimohamed9788@gmail.com",
-          //   subject: "hello world",
-          //   react: <Email massage={message} />,
-          // });
-          const emailHtml = await render(<Email massage={message} />);
-          plunk.emails.send({
-            from: `${email}`,
-            to: "alimohamed9788@gmail.com",
-            subject: "Hello world",
-            body: emailHtml,
-          });
+          await emailjs.sendForm(
+            "service_4ln6yl5",
+            "template_hr668qe",
+            form.current!,
+            "Fm3JYo6_U475aI-uz"
+          );
+
+          successAlert("Contact us", "Your message has been sent successfully");
           setLoading(false);
         } catch (e) {
+          errorAlert(
+            "Contact us",
+            "Something went wrong, please try again later"
+          );
           setLoading(false);
           console.log(e);
         }
@@ -61,6 +54,7 @@ export default function MassageForm() {
     <form
       onSubmit={handleSubmit}
       className="flex flex-col gap-4 bg-primary p-6 py-10 "
+      ref={form}
     >
       <InputText
         label=""

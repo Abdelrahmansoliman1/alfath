@@ -3,23 +3,26 @@ import SelectInput from "@/components/common/SelectInput";
 import { InputTextarea } from "@/components/common/textareaInput";
 import { InputText } from "@/components/common/TextInput";
 import { useFormik } from "formik";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { object, string } from "yup";
 import {
   cargoOptions,
   containerTypeOptions,
   formKeys,
-  polOptions,
+  ports,
   services,
 } from "./constant";
 import { useSearchParams } from "next/navigation";
 import TitleSection from "@/components/title";
 import UnderLine from "@/components/common/underLine";
+import emailjs from "@emailjs/browser";
+import { errorAlert, successAlert } from "@/utils/alert";
 
 export default function RequestQuoteForm() {
   const searchparams = useSearchParams();
   const section = searchparams.get("section");
   const [loading, setLoading] = useState(false);
+  const form = useRef<HTMLFormElement>(null);
   const {
     handleBlur,
     handleChange,
@@ -42,6 +45,7 @@ export default function RequestQuoteForm() {
         .max(11, "The phone number must be at most 10 characters"),
       services: string().required("Services is required"),
       pol: string().required("POL is required"),
+      pod: string().required("POD is required"),
       cargo: string().required("Cargo is required"),
       containerType: string().required("Container Type is required"),
     }),
@@ -62,10 +66,26 @@ export default function RequestQuoteForm() {
         //     subject: "Hello world",
         //     body: emailHtml,
         //   });
+
+        await emailjs.sendForm(
+          "service_4ln6yl5",
+          "template_99iv9rq",
+          form.current!,
+          "Fm3JYo6_U475aI-uz"
+        );
+
         setLoading(false);
+        successAlert(
+          "Request quote",
+          "Your message has been sent successfully"
+        );
       } catch (e) {
         setLoading(false);
         console.log(e);
+        errorAlert(
+          "Request quote",
+          "Something went wrong, please try again later"
+        );
       }
       console.log(values);
     },
@@ -93,13 +113,14 @@ export default function RequestQuoteForm() {
       onSubmit={handleSubmit}
       className="flex flex-col w-full rounded-2xl max-w-[500px] gap-4 bg-[#f5f5f5] p-6 py-10 mx-auto "
       id="requestQuoteForm"
+      ref={form}
     >
-      <TitleSection>
+      <TitleSection className="mb-8">
         <UnderLine>REQUEST A QUOTE</UnderLine>
       </TitleSection>
-      <div className="grid gap-2 grid-cols-1 lg:grid-cols-2 mt-8">
+      <div className="grid gap-2 grid-cols-1 lg:grid-cols-2 ">
         <SelectInput
-          error={errors.services || ""}
+          error={(touched.services && errors.services) || ""}
           label=""
           name="services"
           options={services}
@@ -108,10 +129,10 @@ export default function RequestQuoteForm() {
           placeholder="select services"
         />
         <SelectInput
-          error={errors.pol || ""}
+          error={(touched.pol && errors.pol) || ""}
           label=""
           name="pol"
-          options={polOptions}
+          options={ports}
           value={values.pol}
           setValue={setFieldValue}
           placeholder="select POL"
@@ -119,7 +140,16 @@ export default function RequestQuoteForm() {
       </div>
       <div className="grid gap-2 grid-cols-1 lg:grid-cols-2">
         <SelectInput
-          error={errors.cargo || ""}
+          error={(touched.pod && errors.pod) || ""}
+          label=""
+          name="pod"
+          options={ports}
+          value={values.pod}
+          setValue={setFieldValue}
+          placeholder="select pod"
+        />
+        <SelectInput
+          error={(touched.cargo && errors.cargo) || ""}
           label=""
           name="cargo"
           options={cargoOptions}
@@ -127,16 +157,16 @@ export default function RequestQuoteForm() {
           setValue={setFieldValue}
           placeholder="select cargo"
         />
-        <SelectInput
-          error={errors.containerType || ""}
-          label=""
-          name="containerType"
-          options={containerTypeOptions}
-          value={values.containerType}
-          setValue={setFieldValue}
-          placeholder="select container Type"
-        />
       </div>
+      <SelectInput
+        error={(touched.containerType && errors.containerType) || ""}
+        label=""
+        name="containerType"
+        options={containerTypeOptions}
+        value={values.containerType}
+        setValue={setFieldValue}
+        placeholder="select container Type"
+      />
       <InputText
         label=""
         name="name"

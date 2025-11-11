@@ -1,5 +1,5 @@
-import Image from "next/image";
 import TitleSection from "@/components/title";
+import SeaWaves from "../SeaWaves";
 
 type HeroSectionProps = {
   title: string;
@@ -8,11 +8,7 @@ type HeroSectionProps = {
   children?: React.ReactNode;
 };
 
-export default function HeroSection({
-  title,
-  image,
-  children,
-}: HeroSectionProps) {
+export default function HeroSection({ title, children }: HeroSectionProps) {
   return (
     <div className="relative  py-[100px] pt-[150px]">
       {/* <Image
@@ -23,15 +19,7 @@ export default function HeroSection({
         className="sticky top-0 left-0 object-cover"
       /> */}
 
-      <video
-        src="/hero-video.mp4"
-        autoPlay
-        loop
-        muted
-        controls={false}
-        playsInline
-        className="w-full h-full object-cover absolute inset-0"
-      />
+      <SeaWaves className="absolute inset-0" />
 
       <div className="container">
         <TitleSection title={title} className="z-10 relative text-white" />

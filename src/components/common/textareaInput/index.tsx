@@ -41,13 +41,14 @@ function InputTextRef(
       <div className="relative grid gap-2 capitalize">
         {label && (
           <div className="flex items-baseline gap-1 text-start">
-            <Label htmlFor={props.id} value={label} />
+            <Label htmlFor={props.name} value={label} />
             {labelOptional && <span className="text-sm">{labelOptional}</span>}
           </div>
         )}
         <div className="relative">
           <Textarea
             {...props}
+            id={props.name}
             theme={themeInput}
             color={helperText ? "failure" : "gray"}
             className={` ${className || ""}`}

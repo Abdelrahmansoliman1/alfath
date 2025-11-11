@@ -2,8 +2,8 @@ import Image from "next/image";
 import SocialMedia from "../SocialMedia";
 import { navItems } from "../Navbar/constant";
 import Link from "next/link";
-import { FiChevronsRight, FiMap, FiPhone } from "react-icons/fi";
-import { MdOutlineMail } from "react-icons/md";
+import { FiChevronsRight } from "react-icons/fi";
+import { contactUsList, footer } from "@/constant/footer";
 
 const componyLinks = navItems.filter((item) => !item.list);
 const companyServices = navItems.find((item) => item.list);
@@ -19,80 +19,6 @@ const FooterLinks = [
   },
 ];
 
-export const contactUsList: {
-  icon: React.ReactNode;
-  title: string;
-  text: {
-    title?: string;
-    text: string | React.ReactNode;
-  }[];
-}[] = [
-  {
-    icon: <FiMap />,
-    title: "Address",
-    text: [
-      {
-        // title: "Head Office :",
-        text: "- 5th Floor At 57 Fouad St. - Raml Station - Alexandria, Egypt",
-      },
-      {
-        // title: "Sokhna Office :",
-        text: "- Office 5 At 2nd Floor Sky Mall Beside Sokhna Port Terminal Gate",
-      },
-    ],
-  },
-  {
-    icon: <MdOutlineMail />,
-    title: "Emails",
-    text: [
-      {
-        text: (
-          <Link
-            href="mailto:Info@alfathshipping.com"
-            className="hover:text-white hover:underline"
-          >
-            Info@alfathshipping.com
-          </Link>
-        ),
-      },
-      {
-        text: (
-          <Link
-            href="mailto:Marketing@alfathshipping.com"
-            className="hover:text-white hover:underline"
-          >
-            Marketing@alfathshipping.com
-          </Link>
-        ),
-      },
-    ],
-  },
-  {
-    icon: <FiPhone />,
-    title: "Phones",
-    text: [
-      {
-        text: (
-          <span>
-            <Link
-              href="tel:+201070754291"
-              className="hover:text-white hover:underline"
-            >
-              +201070754291
-            </Link>
-            ,
-            <Link
-              href="tel:+201070754292"
-              className="hover:text-white hover:underline"
-            >
-              +201070754292
-            </Link>
-          </span>
-        ),
-      },
-    ],
-  },
-];
 export default function Footer() {
   return (
     <div className="z-10 relative">
@@ -107,11 +33,7 @@ export default function Footer() {
                 className="mb-6"
                 alt="alfath Logo"
               />
-              <p className="">
-                Established in 2024, Al-Fath for Shipping Agencies has swiftly
-                emerged as a leading force in the maritime and logistics
-                industry.
-              </p>
+              <p>{footer.aboutUs}</p>
               <div className="flex gap-4">
                 <SocialMedia dir="row" />
               </div>
@@ -162,7 +84,7 @@ export default function Footer() {
           </div>
 
           <p className="border-t border-white mt-10 pt-10 text-center">
-            &copy; {new Date().getFullYear()} Al-Fath for Shipping Agencies
+            &copy; {new Date().getFullYear()} {footer.copyright}
           </p>
         </div>
       </div>

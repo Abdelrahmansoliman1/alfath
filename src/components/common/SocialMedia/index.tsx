@@ -3,6 +3,7 @@ import {
   GrInstagram,
   GrLinkedinOption,
 } from "react-icons/gr";
+import { ImWhatsapp } from "react-icons/im";
 
 export const socialMediaList = [
   {
@@ -16,6 +17,10 @@ export const socialMediaList = [
   {
     icon: <GrLinkedinOption />,
     link: "https://www.linkedin.com/company/alfathshipping/",
+  },
+  {
+    icon: <ImWhatsapp />,
+    link: "https://api.whatsapp.com/send?phone=201094024596",
   },
 ];
 

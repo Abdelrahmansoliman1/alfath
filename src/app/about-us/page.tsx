@@ -1,3 +1,4 @@
+import { aboutUsPage } from "@/constant/aboutUs";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 
@@ -7,13 +8,13 @@ const OurVision = dynamic(() => import("@/components/about/OurVision"));
 const OurMission = dynamic(() => import("@/components/about/OurMission"));
 
 export const metadata: Metadata = {
-  title: "Alfath | About Us",
+  title: `Alfath | ${aboutUsPage.title}`,
 };
 
 export default function About() {
   return (
     <>
-      <HeroSection title="About Us" image="bg-2.jpg" />
+      <HeroSection title={aboutUsPage.title} image="bg-2.jpg" />
       <LetsFind />
       <div className="bg-[#f1f1f1] py-8 -mb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 container mx-auto  z-10 relative">

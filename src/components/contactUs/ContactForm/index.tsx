@@ -1,7 +1,6 @@
 "use client";
 
-import { contactUsList } from "@/components/common/Footer";
-import { useEffect, useRef, useState } from "react";
+import { contactUsList } from "@/constant/footer";
 import MassageForm from "../MassageForm";
 
 export default function ContactForm() {
@@ -24,31 +23,29 @@ export default function ContactForm() {
   // }, []);
 
   return (
-    <div className="py-[50px]  relative z-10 mx-auto grid grid-cols-1 md:grid-cols-[1fr_500px]">
-      <div className="h-fit">
-        <div className="bg-white p-6">
-          {contactUsList.map((item, index) => (
-            <div key={index} className="flex items-start gap-2 mb-4">
-              <span className="text-xl p-2 bg-primary text-white rounded-full">
-                {item.icon}
+    <div className="relative z-10 mx-auto grid grid-cols-1">
+      <div className="bg-[#f5f5f5] p-6">
+        {contactUsList.map((item, index) => (
+          <div key={index} className="flex items-start gap-2 mb-4">
+            <span className="text-xl p-2 bg-primary text-white rounded-full">
+              {item.icon}
+            </span>
+            <div className="grid">
+              <span className="text-xl font-bold text-primary">
+                {item.title}
               </span>
-              <div className="grid">
-                <span className="text-xl font-bold text-primary">
-                  {item.title}
-                </span>
-                {item.text.map((text, index) => (
-                  <ul className="grid" key={index}>
-                    <li className="flex items-start flex-col gap-1 text-sm ">
-                      <span className="text-primary/80 [&>span>a]:hover:text-primary [&>a]:hover:text-primary">
-                        {text.text}
-                      </span>
-                    </li>
-                  </ul>
-                ))}
-              </div>
+              {item.text.map((text, index) => (
+                <ul className="grid" key={index}>
+                  <li className="flex items-start flex-col gap-1 text-sm ">
+                    <span className="text-primary/80 [&>span>a]:hover:text-primary [&>a]:hover:text-primary">
+                      {text.text}
+                    </span>
+                  </li>
+                </ul>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
 
       <div>

@@ -7,7 +7,7 @@ import AlertError from "../AlertError";
 const theme = {
   arrowIcon: "ml-2 h-4 w-4",
   content:
-    "py-1 focus:outline-none h-[calc(100%-16px)] overflow-auto max-h-[300px]",
+    "py-1 focus:outline-none h-[calc(100%-16px)] w-full overflow-auto max-h-[300px]",
   floating: {
     animation: "transition-opacity z-20",
     arrow: {
@@ -19,7 +19,7 @@ const theme = {
       },
       placement: "-4px",
     },
-    base: "z-10 h-fit  w-full  pe-2 py-2 !border-0 !rounded-2xl  w-fit divide-y divide-gray-100 rounded shadow focus:outline-none",
+    base: "!z-100 h-fit  !w-full !min-w-full   pe-2 py-2 !border-0 !rounded-2xl  w-fit divide-y divide-gray-100 rounded shadow focus:outline-none",
     content: "py-1 text-sm text-gray-700 ",
     divider: "my-1 h-px bg-gray-100 dark:bg-gray-600",
     header: "block px-4 py-2 text-sm text-gray-700 ",
@@ -66,14 +66,24 @@ export default function SelectInput({
     [name, setValue]
   );
   return (
-    <div className="grid gap-2">
+    <div className="grid gap-2 relative">
+      <input
+        type="text"
+        className="hidden"
+        id={name}
+        name={name}
+        title={name}
+        defaultValue={value}
+      />
       {label && <Label value={label} className="text-start" />}
       <Dropdown
         label={""}
         renderTrigger={() => (
           <div className="relative flex items-center justify-between gap-2 rounded-full border border-border bg-white px-4 py-2">
-            <span className="text-sm font-medium">
-              {placeholder || "select items"}
+            <span className="text-sm font-medium line-clamp-1">
+              {options.find((item) => item.value === value)?.label ||
+                placeholder ||
+                "select items"}
             </span>
             <FaChevronDown className="size-4" />
             {error && <AlertError text={error} />}

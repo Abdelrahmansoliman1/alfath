@@ -29,27 +29,27 @@ export function SidebarDrawer() {
             aria-label="Sidebar with multi-level dropdown example"
             theme={sidebarTheme}
           >
-            <Sidebar.Logo href="/" img="./logo.png" imgAlt="Alfath logo" />
+            <Sidebar.Logo href="/" img="/logo.png" imgAlt="Alfath logo" />
 
             <Sidebar.Items>
               <Sidebar.ItemGroup>
                 {navItems.map((item) => {
-                  if (item.list) {
-                    return (
-                      <Sidebar.Collapse label={item.label} key={item.label}>
-                        {item.list.map((listItem) => (
-                          <Sidebar.Item
-                            href={listItem.path}
-                            key={listItem.label}
-                            as={Link}
-                            onClick={handleClose}
-                          >
-                            {listItem.label}
-                          </Sidebar.Item>
-                        ))}
-                      </Sidebar.Collapse>
-                    );
-                  }
+                  // if (item.list) {
+                  //   return (
+                  //     <Sidebar.Collapse label={item.label} key={item.label}>
+                  //       {item.list.map((listItem) => (
+                  //         <Sidebar.Item
+                  //           href={listItem.path}
+                  //           key={listItem.label}
+                  //           as={Link}
+                  //           onClick={handleClose}
+                  //         >
+                  //           {listItem.label}
+                  //         </Sidebar.Item>
+                  //       ))}
+                  //     </Sidebar.Collapse>
+                  //   );
+                  // }
 
                   return (
                     <Sidebar.Item

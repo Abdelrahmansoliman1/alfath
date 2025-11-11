@@ -1,13 +1,15 @@
 import PrimaryBtn from "@/components/buttons/primaryBtn";
+import SeaWaves from "@/components/common/SeaWaves";
 import UnderLine from "@/components/common/underLine";
 import TitleSection from "@/components/title";
+import { serviceSection } from "@/constant/home";
 import Link from "next/link";
 
 export default function OurServicesSection() {
   return (
     <div
       style={{
-        backgroundImage: `url("./bg-2.jpg")`,
+        backgroundImage: `url("/bg-2.jpg")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -18,25 +20,14 @@ export default function OurServicesSection() {
         color: "white",
       }}
     >
-      <video
-        src="/hero-video.mp4"
-        autoPlay
-        loop
-        muted
-        controls={false}
-        playsInline
-        className="w-full h-full object-cover absolute inset-0"
-      />
+      <SeaWaves className="absolute inset-0" />
       <div className="container py-10 grid gap-4  text-center relative z-10 ">
         <TitleSection>
-          <UnderLine>Our Services</UnderLine>
+          <UnderLine>{serviceSection.title}</UnderLine>
         </TitleSection>
 
         <p className="text-lg md:text-xl mt-4 text-white/90">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis
-          dicta rerum unde et eos consequuntur! Vitae quia explicabo enim
-          dolores magni odio inventore adipisci deserunt, exercitationem animi
-          necessitatibus fuga molestias?
+          {serviceSection.text}
         </p>
 
         <PrimaryBtn
@@ -46,7 +37,7 @@ export default function OurServicesSection() {
           as={Link}
           href="/our-services"
         >
-          Our services
+          {serviceSection.button}
         </PrimaryBtn>
       </div>
     </div>
