@@ -108,6 +108,8 @@ export default function RequestQuoteForm() {
     }
   }, [section]);
 
+  console.log(values);
+
   return (
     <form
       onSubmit={handleSubmit}
