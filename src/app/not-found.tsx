@@ -10,7 +10,7 @@ export default function NotFound() {
         <Image src={"/not-found.svg"} width={400} height={400} alt="404" />
         <h2 className="text-3xl font-bold">Page Not Found</h2>
         <Link href="/">
-          <PrimaryBtn id="not-found">
+          <PrimaryBtn id="not-found" color="secondary">
             <FaArrowLeftLong /> Back to Home
           </PrimaryBtn>
         </Link>

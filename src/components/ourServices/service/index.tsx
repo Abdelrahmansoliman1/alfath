@@ -36,14 +36,14 @@ export default function ServiceItem({
       <div className={`${imgOrder} ${imageClassName} `}>
         <motion.div
           variants={zoomIn(0, 1)}
-          className={` relative before:absolute before:inset-0 before:border-primary before:border-2 before:rounded-lg  w-fit before:z-[-1] before:translate-y-4 before:translate-x-4 `}
+          className={` relative before:absolute before:inset-0 before:bg-secondary-20 before:border-secondary before:border-2 before:rounded-3xl w-fit before:z-[-1] before:translate-y-4 before:translate-x-4 `}
         >
           <Image
             src={image}
             alt="service"
             width={500}
             height={500}
-            className="object-cover"
+            className="object-cover rounded-3xl shadow-lg"
             priority
           />
         </motion.div>

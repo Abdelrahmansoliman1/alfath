@@ -20,12 +20,12 @@ export default function Navbar() {
   return (
     <NavbarFlowbite
       theme={theme}
-      className={`after:absolute after:inset-0 after:w-full after: after:bg-black/70  after:-z-10  text-black after:transition-all after:duration-300 after:origin-top`}
+      className="text-white"
     >
       <NavbarBrand as={Link} href="/">
         <Image
           src="/logo.png"
-          className="mr-3 h-6 sm:h-9"
+          className="h-8 w-auto sm:h-9"
           alt="Flowbite React Logo"
           width={170}
           height={44}
@@ -93,9 +93,11 @@ export default function Navbar() {
           );
         })}
       </NavbarCollapse>
-      <div className="flex gap-4 items-center ms-auto grow justify-between sm:justify-end">
-        <Link href={"/?section=quote"}>
-          <PrimaryBtn id="GetAQuote">Request A Quote</PrimaryBtn>
+      <div className="flex gap-3 items-center ms-auto justify-end">
+        <Link href={"/?section=quote"} className="hidden sm:block">
+          <PrimaryBtn id="GetAQuote" color="secondary">
+            Request A Quote
+          </PrimaryBtn>
         </Link>
         <SidebarDrawer />
       </div>

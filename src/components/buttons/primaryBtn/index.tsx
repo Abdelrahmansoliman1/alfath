@@ -1,16 +1,21 @@
 import { Button, ButtonProps, Spinner } from "flowbite-react";
 
 const customTheme = {
-  base: "group flex items-stretch items-center justify-center p-0 text-center font-semibold relative focus:z-10 focus:outline-none transition-[color,background-color,border-color,text-decoration-color,fill,stroke,box-shadow] disabled:opacity-70 w-fit disabled:pointer-events-none border  min-w-[150px] shadow-lg cursor-pointer h-11 whitespace-nowrap",
+  base: "group flex items-stretch items-center justify-center p-0 text-center font-semibold tracking-tight relative focus:z-10 focus:outline-none transition-all duration-300 ease-out hover:-translate-y-0.5 disabled:opacity-70 w-fit disabled:pointer-events-none border min-w-[150px] shadow-md hover:shadow-lg cursor-pointer h-12 whitespace-nowrap",
 
   color: {
-    primary: "bg-primary hover:bg-primary/20  border-primary  text-white",
+    primary:
+      "bg-primary hover:bg-secondary border-primary hover:border-secondary text-white",
+    secondary:
+      "bg-secondary hover:bg-secondary-hover border-secondary hover:border-secondary-hover text-white",
+    secondaryOutLine:
+      "bg-transparent hover:bg-secondary hover:text-white border-secondary text-secondary",
     white:
-      "bg-white hover:bg-transparent hover:text-white border-white  text-primary",
+      "bg-white hover:bg-secondary hover:text-white border-white hover:border-secondary text-primary",
     whiteOutLine:
-      "bg-transparent hover:bg-white hover:text-primary border-white  text-white",
+      "bg-white/5 backdrop-blur-sm hover:bg-white hover:text-primary border-white/40 hover:border-white text-white",
     primaryOutLine:
-      "bg-transparent hover:bg-primary hover:text-white border-primary  text-primary",
+      "bg-transparent hover:bg-primary hover:text-white border-primary text-primary",
     primaryCancel:
       "bg-white  border-primary text-primary opacity-50 hover:opacity-100",
     grayOutLine:
@@ -32,8 +37,8 @@ const customTheme = {
     on: "rounded-full",
   },
   size: {
-    md: "text-base px-4 py-2",
-    lg: "text-2xl px-5 py-2.5",
+    md: "text-base px-6 py-2",
+    lg: "text-2xl px-7 py-2.5",
   },
 };
 
@@ -62,7 +67,7 @@ export default function PrimaryBtn({
       {isProcessing ? (
         <Spinner
           aria-label="Left-aligned spinner example"
-          className={"fill-primary"}
+          className={"fill-secondary"}
         />
       ) : (
         <span className="flex items-center gap-2 capitalize">{children}</span>

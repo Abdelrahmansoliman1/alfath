@@ -2,7 +2,7 @@ export const timelineTheme = {
   root: {
     direction: {
       horizontal: "sm:flex",
-      vertical: "relative border-l-2 border-primary pl-3 dark:border-gray-700",
+      vertical: "relative border-l-2 border-secondary/40 pl-3",
     },
   },
   item: {
@@ -17,15 +17,15 @@ export const timelineTheme = {
         vertical: "",
       },
       body: {
-        base: "mb-4 text-base font-normal text-gray-500 line-clamp-2",
+        base: "mb-4 text-base font-normal text-gray leading-relaxed line-clamp-2",
       },
       title: {
-        base: "text-lg pt-4 font-semibold text-gray-900 dark:text-white",
+        base: "text-lg pt-4 font-bold tracking-tight text-primary",
       },
     },
     point: {
       horizontal: "flex items-center ",
-      line: "hidden h-0.5 w-full bg-primary sm:flex",
+      line: "hidden h-0.5 w-full bg-secondary sm:flex",
       marker: {
         base: {
           horizontal:
@@ -36,7 +36,7 @@ export const timelineTheme = {
         icon: {
           base: "size-12",
           wrapper:
-            "absolute -left-6 flex size-12 items-center justify-center rounded-full text-primary bg-white rounded-full p-2 group-hover:bg-primary group-hover:text-white",
+            "absolute -left-6 flex size-12 items-center justify-center rounded-2xl text-secondary bg-surface border border-border p-2.5 transition-colors duration-300 group-hover:bg-secondary group-hover:border-secondary group-hover:text-white",
         },
       },
       vertical: "",

@@ -50,7 +50,6 @@ export const aboutSection = {
 
 export const serviceSection = {
   title: "Our Services",
-  text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis dicta rerum unde et eos consequuntur! Vitae quia explicabo enim voluptas, autem, voluptate, fugiat quas nihil eligendi laborum. Quisquam, voluptas.",
   button: "View Services",
 };
 

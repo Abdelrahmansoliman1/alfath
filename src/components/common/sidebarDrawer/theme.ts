@@ -46,8 +46,8 @@ export const sidebarTheme = {
     },
   },
   item: {
-    base: "flex items-center justify-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700",
-    active: "bg-gray-100 dark:bg-gray-700",
+    base: "flex items-center justify-center rounded-xl px-3 py-3 text-base font-medium text-primary transition-colors hover:bg-secondary-20 hover:text-primary",
+    active: "bg-secondary-20 text-primary",
     collapsed: {
       insideCollapse: "group w-full pl-8 transition duration-75",
       noIcon: "font-bold",
@@ -69,7 +69,7 @@ export const sidebarTheme = {
     base: "mt-4 space-y-2 border-t border-gray-200 pt-4 first:mt-0 first:border-t-0 first:pt-0 dark:border-gray-700",
   },
   logo: {
-    base: "mb-5 flex items-center pl-2.5 bg-primary/30 py-2",
+    base: "mb-6 flex items-center justify-center rounded-2xl bg-primary px-4 py-4",
     collapsed: {
       on: "hidden",
       off: "self-center whitespace-nowrap text-xl font-semibold dark:text-white",

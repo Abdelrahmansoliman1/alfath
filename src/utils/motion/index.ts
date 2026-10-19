@@ -1,4 +1,6 @@
-export const fadeIn = (delay = 0) => ({
+import type { Variants } from "motion/react";
+
+export const fadeIn = (delay = 0): Variants => ({
   hidden: {
     opacity: 0,
   },
@@ -19,7 +21,7 @@ export const slideIn = (
   type: "tween" | "spring",
   delay: number = 0,
   duration: number = 0.7
-) => ({
+): Variants => ({
   hidden: {
     x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
     y: direction === "up" ? "100%" : direction === "down" ? "-100%" : 0,
@@ -41,7 +43,7 @@ export const slideIn = (
 export const staggerContainer = (
   staggerChildren?: number,
   delayChildren: number = 0
-) => ({
+): Variants => ({
   initial: {},
   animate: {
     transition: {
@@ -51,7 +53,7 @@ export const staggerContainer = (
   },
 });
 
-export const textVariant = (delay: number) => ({
+export const textVariant = (delay: number): Variants => ({
   hidden: {
     y: -50,
     opacity: 0,
@@ -66,7 +68,7 @@ export const textVariant = (delay: number) => ({
     },
   },
 });
-export const textContainer = (delay: number = 0) => ({
+export const textContainer = (delay: number = 0): Variants => ({
   hidden: {
     opacity: 0,
   },
@@ -76,7 +78,7 @@ export const textContainer = (delay: number = 0) => ({
   }),
 });
 
-export const textVariant2 = {
+export const textVariant2: Variants = {
   hidden: {
     opacity: 0,
     y: 20,
@@ -91,7 +93,7 @@ export const textVariant2 = {
   },
 };
 
-export const zoomIn = (delay: number, duration: number) => ({
+export const zoomIn = (delay: number, duration: number): Variants => ({
   hidden: {
     scale: 0,
     filter: "blur(10px)",
@@ -110,11 +112,13 @@ export const zoomIn = (delay: number, duration: number) => ({
   },
 });
 
-export const lineScaleX = {
-  animate: { scaleX: [1, 0.5, 1] },
-  transition: {
-    ease: "easeInOut",
-    duration: 1,
-    repeat: Infinity,
+export const lineScaleX: Variants = {
+  animate: {
+    scaleX: [1, 0.5, 1],
+    transition: {
+      ease: "easeInOut",
+      duration: 1,
+      repeat: Infinity,
+    },
   },
 };

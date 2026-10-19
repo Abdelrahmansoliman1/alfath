@@ -4,9 +4,16 @@ import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import Loading from "./loading";
 import PageWrapper from "@/components/pageWrapper";
+import { Plus_Jakarta_Sans } from "next/font/google";
 // import MainLayout from "@/layouts/mainLayout";
 
 const MainLayout = dynamic(() => import("@/layouts/mainLayout"));
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Alfath",
@@ -20,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={jakarta.variable}>
       <body className={`antialiased`}>
         <Suspense fallback={<Loading />}>
           <PageWrapper>

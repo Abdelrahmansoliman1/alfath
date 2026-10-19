@@ -26,7 +26,7 @@ const theme = {
     hidden: "invisible opacity-0",
     item: {
       container: "",
-      base: "flex w-full cursor-pointer items-center justify-start px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none ",
+      base: "flex w-full cursor-pointer items-center justify-start rounded-lg px-4 py-2 text-sm text-primary hover:bg-surface focus:bg-surface focus:outline-none ",
       icon: "mr-2 h-4 w-4",
     },
     style: {
@@ -79,13 +79,13 @@ export default function SelectInput({
       <Dropdown
         label={""}
         renderTrigger={() => (
-          <div className="relative flex items-center justify-between gap-2 rounded-full border border-border bg-white px-4 py-2">
+          <div className="relative flex cursor-pointer items-center justify-between gap-2 rounded-xl border border-border bg-white px-4 py-3 transition-colors hover:border-secondary">
             <span className="text-sm font-medium line-clamp-1">
               {options.find((item) => item.value === value)?.label ||
                 placeholder ||
                 "select items"}
             </span>
-            <FaChevronDown className="size-4" />
+            <FaChevronDown className="size-3.5 text-secondary" />
             {error && <AlertError text={error} />}
           </div>
         )}
@@ -97,7 +97,7 @@ export default function SelectInput({
               key={option.value}
               onClick={() => handleSelect(option.value)}
               className={`${
-                value === option.value ? "bg-primary-opacity" : ""
+                value === option.value ? "bg-secondary-20 font-semibold" : ""
               }`}
             >
               <span>{option.label}</span>

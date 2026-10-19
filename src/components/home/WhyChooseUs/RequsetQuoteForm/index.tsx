@@ -113,7 +113,7 @@ export default function RequestQuoteForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col w-full rounded-2xl max-w-[500px] gap-4 bg-[#f5f5f5] p-6 py-10 mx-auto "
+      className="flex flex-col w-full rounded-3xl max-w-[520px] gap-4 bg-surface border border-border shadow-sm p-6 md:p-8 py-10 mx-auto"
       id="requestQuoteForm"
       ref={form}
     >
@@ -207,7 +207,13 @@ export default function RequestQuoteForm() {
         value={values.message}
         rows={4}
       />
-      <PrimaryBtn id="contact" fullSized type="submit" isProcessing={loading}>
+      <PrimaryBtn
+        id="contact"
+        color="secondary"
+        fullSized
+        type="submit"
+        isProcessing={loading}
+      >
         Send
       </PrimaryBtn>
     </form>

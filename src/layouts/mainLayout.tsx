@@ -13,7 +13,7 @@ export default function MainLayout({
       <div className="relative grid gap-10 ">
         <div className="absolute inset-y-0 right-2 ">
           <div className="fixed w-fit top-0 right-2 h-screen grid place-content-center z-30">
-            <SocialMedia dir="col" className="border border-primary" />
+            <SocialMedia dir="col" className="border border-border" />
           </div>
         </div>
         {children}

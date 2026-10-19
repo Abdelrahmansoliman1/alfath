@@ -10,7 +10,7 @@ type HeroSectionProps = {
 
 export default function HeroSection({ title, children }: HeroSectionProps) {
   return (
-    <div className="relative  py-[100px] pt-[150px]">
+    <div className="relative py-[100px] pt-[160px] overflow-hidden bg-black">
       {/* <Image
         src={image}
         priority
@@ -20,6 +20,7 @@ export default function HeroSection({ title, children }: HeroSectionProps) {
       /> */}
 
       <SeaWaves className="absolute inset-0" />
+      <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/80" />
 
       <div className="container">
         <TitleSection title={title} className="z-10 relative text-white" />

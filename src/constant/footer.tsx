@@ -31,7 +31,7 @@ export const contactUsList: {
         text: (
           <Link
             href="mailto:Info@alfathshipping.com"
-            className="hover:text-white hover:underline"
+            className="hover:text-secondary hover:underline transition-colors"
           >
             Info@alfathshipping.com
           </Link>
@@ -41,7 +41,7 @@ export const contactUsList: {
       //   text: (
       //     <Link
       //       href="mailto:Marketing@alfathshipping.com"
-      //       className="hover:text-white hover:underline"
+      //       className="hover:text-secondary hover:underline transition-colors"
       //     >
       //       Marketing@alfathshipping.com
       //     </Link>
@@ -58,14 +58,14 @@ export const contactUsList: {
           <span>
             <Link
               href="tel:+201070754291"
-              className="hover:text-white hover:underline"
+              className="hover:text-secondary hover:underline transition-colors"
             >
               +201070754291
             </Link>
             ,
             <Link
               href="tel:+201070754292"
-              className="hover:text-white hover:underline"
+              className="hover:text-secondary hover:underline transition-colors"
             >
               +201070754292
             </Link>

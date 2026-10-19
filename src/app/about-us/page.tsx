@@ -16,8 +16,8 @@ export default function About() {
     <>
       <HeroSection title={aboutUsPage.title} image="bg-2.jpg" />
       <LetsFind />
-      <div className="bg-[#f1f1f1] py-8 -mb-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 container mx-auto  z-10 relative">
+      <div className="bg-surface py-16 -mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 container mx-auto z-10 relative">
           <OurMission />
           <OurVision />
         </div>

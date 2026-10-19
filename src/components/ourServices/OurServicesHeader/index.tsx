@@ -30,14 +30,16 @@ export default function OurServicesHeader({
         //   backgroundAttachment: "fixed",
         // }}
       >
-        <ul className="gap-4 bg-[#f1f1f1] p-4 rounded-lg hidden md:grid">
+        <ul className="gap-1 bg-surface border border-border p-3 rounded-2xl hidden md:grid">
           {ourServicesList?.map((item, index) => {
             return (
               <li key={index}>
                 <Link
                   href={item.path}
-                  className={`text-lg font-semibold hover:text-primary transition-colors ${
-                    item.path === pathname ? "text-primary" : ""
+                  className={`block capitalize rounded-xl border-l-4 px-4 py-3 text-base font-semibold transition-colors hover:text-secondary hover:bg-white ${
+                    item.path === pathname
+                      ? "text-secondary bg-white border-secondary shadow-sm"
+                      : "border-transparent text-primary"
                   }`}
                 >
                   {item.label}
@@ -49,7 +51,9 @@ export default function OurServicesHeader({
         <div>
           <TitleSection title={title} className="text-left w-full" />
 
-          <div className="px-4 mx-auto py-[40px] grid gap-4">{children}</div>
+          <div className="px-4 mx-auto py-[40px] grid gap-4 text-lg leading-relaxed text-gray">
+            {children}
+          </div>
         </div>
       </div>
     </>

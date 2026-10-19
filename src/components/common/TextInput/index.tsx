@@ -18,14 +18,14 @@ const themeInput = {
       svg: "h-5 w-5 text-light-gray-2",
     },
     input: {
-      base: "block w-full border !focus:outline-none !focus:shadow-none disabled:cursor-not-allowed disabled:opacity-50 outline-0 !bg-white",
+      base: "block w-full border !focus:outline-none !focus:shadow-none disabled:cursor-not-allowed disabled:opacity-50 outline-0 !bg-white transition-colors placeholder:text-gray",
       sizes: {
         sm: "p-2 sm:text-xs",
-        md: "py-2.5 px-4 text-sm",
+        md: "py-3 px-4 text-sm",
         lg: "p-4 sm:text-base",
       },
       colors: {
-        gray: "border-border bg-transparent text-gray-900 focus:border-primary",
+        gray: "border-border bg-transparent text-primary focus:border-secondary",
         info: "border-cyan-500 bg-cyan-50 text-cyan-900 placeholder-cyan-700 focus:border-cyan-500 focus:ring-cyan-500",
         failure:
           "border-red-500 bg-red-50 text-red-900 placeholder-red-700 focus:border-red-500 focus:ring-red-500 ",
@@ -43,8 +43,8 @@ const themeInput = {
         off: "",
       },
       withAddon: {
-        on: "rounded-r-lg",
-        off: "rounded-lg",
+        on: "rounded-r-xl",
+        off: "rounded-xl",
       },
       withShadow: {
         on: "shadow-sm",

@@ -21,17 +21,15 @@ export default function OurServicesSection() {
       }}
     >
       <SeaWaves className="absolute inset-0" />
-      <div className="container py-10 grid gap-4  text-center relative z-10 ">
+      <div className="absolute inset-0 bg-black/60" />
+      <div className="container py-24 grid gap-8 text-center relative z-10 place-items-center">
         <TitleSection>
           <UnderLine>{serviceSection.title}</UnderLine>
         </TitleSection>
 
-        <p className="text-lg md:text-xl mt-4 text-white/90">
-          {serviceSection.text}
-        </p>
-
         <PrimaryBtn
           id="ourServices"
+          color="secondary"
           className="mx-auto"
           //@ts-expect-error this error because of flowbite button type
           as={Link}

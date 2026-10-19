@@ -53,7 +53,7 @@ export default function MassageForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-4 bg-primary p-6 py-10 "
+      className="flex flex-col gap-4 bg-primary p-6 md:p-8 py-10"
       ref={form}
     >
       <InputText

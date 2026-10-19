@@ -23,21 +23,21 @@ export default function ContactForm() {
   // }, []);
 
   return (
-    <div className="relative z-10 mx-auto grid grid-cols-1">
-      <div className="bg-[#f5f5f5] p-6">
+    <div className="relative z-10 mx-auto grid grid-cols-1 w-full overflow-hidden rounded-3xl shadow-lg">
+      <div className="bg-surface p-6 md:p-8">
         {contactUsList.map((item, index) => (
-          <div key={index} className="flex items-start gap-2 mb-4">
-            <span className="text-xl p-2 bg-primary text-white rounded-full">
+          <div key={index} className="flex items-start gap-3 mb-5 last:mb-0">
+            <span className="text-lg p-2.5 bg-secondary text-white rounded-xl">
               {item.icon}
             </span>
             <div className="grid">
-              <span className="text-xl font-bold text-primary">
+              <span className="text-lg font-bold text-primary">
                 {item.title}
               </span>
               {item.text.map((text, index) => (
                 <ul className="grid" key={index}>
                   <li className="flex items-start flex-col gap-1 text-sm ">
-                    <span className="text-primary/80 [&>span>a]:hover:text-primary [&>a]:hover:text-primary">
+                    <span className="text-gray [&>span>a]:hover:text-secondary [&>a]:hover:text-secondary">
                       {text.text}
                     </span>
                   </li>

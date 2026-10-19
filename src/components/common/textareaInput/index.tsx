@@ -4,9 +4,9 @@ import { Label, Textarea, TextareaProps } from "flowbite-react";
 import { forwardRef } from "react";
 import AlertError from "../AlertError";
 const themeInput = {
-  base: "block w-full rounded-lg border border-primary text-sm disabled:cursor-not-allowed disabled:opacity-50",
+  base: "block w-full rounded-xl border px-4 py-3 text-sm transition-colors placeholder:text-gray disabled:cursor-not-allowed disabled:opacity-50",
   colors: {
-    gray: "border-primary bg-white text-gray-900 focus:border-cyan-500 focus:ring-cyan-500 ",
+    gray: "border-border bg-white text-primary focus:border-secondary",
     info: "border-cyan-500 bg-cyan-50 text-cyan-900 placeholder-cyan-700 focus:border-cyan-500 focus:ring-cyan-500 ",
     failure:
       "border-red-500 bg-white text-red-900 placeholder-red-700 focus:border-red-500 focus:ring-red-500",

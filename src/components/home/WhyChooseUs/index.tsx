@@ -8,13 +8,13 @@ import { whyChooseUsSection } from "@/constant/home";
 
 export default function WhyChooseUs() {
   return (
-    <div className="grid gap-14 container ">
+    <div className="grid gap-14 container py-10">
       <TitleSection>
         <UnderLine>{whyChooseUsSection.title}</UnderLine>
       </TitleSection>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-        <div className="p-4 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+        <div className="p-4 pl-6">
           <TimeLine timeline={whyChooseUsSection.timelineList} />
         </div>
 

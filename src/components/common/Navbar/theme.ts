@@ -1,6 +1,6 @@
 export const theme = {
   root: {
-    base: "fixed top-0 inset-x-0 bg-transparent z-50 drop px-2 sm:px-4",
+    base: "fixed top-3 inset-x-3 sm:inset-x-6 xl:inset-x-0 xl:mx-auto xl:max-w-[80rem] z-50 px-2 sm:px-4 rounded-2xl bg-primary border border-white/10 shadow-xl shadow-black/20",
     rounded: {
       on: "rounded",
       off: "",
@@ -10,15 +10,15 @@ export const theme = {
       off: "",
     },
     inner: {
-      base: "mx-auto flex flex-wrap items-center  gap-10 lg:gap-20 py-4 md:py-6 justify-between md:justify-start md:space-x-10 ",
+      base: "mx-auto flex flex-nowrap items-center gap-4 lg:gap-16 py-3 md:py-4 justify-between",
       fluid: {
         on: "",
-        off: "container",
+        off: "w-full",
       },
     },
   },
   brand: {
-    base: "flex items-center",
+    base: "flex items-center shrink-0",
   },
   collapse: {
     base: "w-full lg:block lg:w-auto ",
@@ -29,10 +29,10 @@ export const theme = {
     },
   },
   link: {
-    base: "block py-2 pl-3 pr-4 md:p-0 text-white capitalize text-lg font-medium",
+    base: "block py-2 pl-3 pr-4 md:p-0 text-white/80 hover:text-white transition-colors capitalize text-base font-medium",
     active: {
-      on: "text-primary",
-      off: "border-b md:border-0 relative after:absolute after:-bottom-2 after:left-0 after:w-full after:h-0.5 after:bg-primary md:hover:bg-transparent after:scale-x-0 after:origin-center after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-100",
+      on: "text-secondary",
+      off: "border-b md:border-0 relative after:absolute after:-bottom-2 after:left-0 after:w-full after:h-0.5 after:rounded-full after:bg-secondary md:hover:bg-transparent after:scale-x-0 after:origin-center after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-100",
     },
     disabled: {
       on: "text-gray-400 hover:cursor-not-allowed ",

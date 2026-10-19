@@ -17,9 +17,9 @@ export function SidebarDrawer() {
     <>
       <PrimaryBtn
         onClick={() => setIsOpen(true)}
-        color="primaryOutLine"
+        color="whiteOutLine"
         id="drawer"
-        className="!w-fit min-w-auto rounded-sm lg:hidden"
+        className="!w-fit min-w-auto !px-3 rounded-xl lg:hidden"
       >
         <Icon path={mdiMenu} size={1} />
       </PrimaryBtn>
@@ -64,6 +64,15 @@ export function SidebarDrawer() {
                 })}
               </Sidebar.ItemGroup>
             </Sidebar.Items>
+            <Link
+              href={"/?section=quote"}
+              onClick={handleClose}
+              className="mt-6 block"
+            >
+              <PrimaryBtn id="drawerGetAQuote" color="secondary" fullSized>
+                Request A Quote
+              </PrimaryBtn>
+            </Link>
           </Sidebar>
         </Drawer.Items>
       </Drawer>

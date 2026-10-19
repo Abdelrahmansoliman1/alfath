@@ -32,7 +32,7 @@ type Props = {
 export default function SocialMedia({ className = "", dir = "row" }: Props) {
   return (
     <div
-      className={`p-2 flex gap-4 ${className} flex-${dir} shadow-sm bg-white rounded-full`}
+      className={`p-2 flex gap-3 ${className} flex-${dir} shadow-lg bg-white/90 backdrop-blur rounded-full`}
     >
       {socialMediaList.map((item, index) => (
         <a
@@ -40,7 +40,7 @@ export default function SocialMedia({ className = "", dir = "row" }: Props) {
           href={item.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xl text-primary border border-primary p-2 rounded-full hover:bg-primary hover:text-white"
+          className="text-lg text-primary border border-border p-2 rounded-full transition-colors duration-300 hover:bg-secondary hover:border-secondary hover:text-white"
         >
           {item.icon}
         </a>

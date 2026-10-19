@@ -5,28 +5,55 @@
 
 @layer base {
   @theme {
-    --font-sans: var(--font-geist-sans);
+    --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
     --font-mono: var(--font-geist-mono);
     --color-primary: var(--primary);
+    --color-primary-soft: var(--primary-soft);
     --color-primary-20: var(--primary-20);
+    --color-primary-opacity: var(--secondary-20);
+    --color-secondary: var(--secondary);
+    --color-secondary-hover: var(--secondary-hover);
+    --color-secondary-20: var(--secondary-20);
+    --color-surface: var(--surface);
+    --color-border: var(--border);
     --color-gray: var(--gray);
   }
 
   :root {
     --background: #ffffff;
-    --foreground: #171717;
-    /* --primary: #63b779; */
-    --primary: #0b2566;
-    --primary-20: #63b77920;
-    --gray: #8c8c8c;
+    --foreground: #0a0a0a;
+    --primary: #000000;
+    --primary-soft: #111111;
+    --primary-20: #00000014;
+    --secondary: #63b779;
+    --secondary-hover: #4f9e64;
+    --secondary-20: #63b77933;
+    --surface: #f6f7f6;
+    --border: #e4e6e4;
+    --gray: #6b6f6c;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
     color: var(--foreground);
     background: var(--background);
-    font-family: "Lato", sans-serif;
+    font-family: var(--font-sans);
     overflow-x: hidden;
     scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background: var(--secondary);
+    color: #fff;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 3px;
   }
 }
 
@@ -46,7 +73,7 @@
 .loader {
   width: 40px;
   height: 40px;
-  --c: no-repeat linear-gradient(var(--primary) 0 0);
+  --c: no-repeat linear-gradient(var(--secondary) 0 0);
   background: var(--c), var(--c), var(--c), var(--c);
   background-size: 21px 21px;
   background-position: 100% 0, 100% 100%, 0 100%, 0 0;
@@ -57,6 +84,23 @@ input,
 textarea {
   box-shadow: none !important;
   outline: none !important;
+}
+
+/* SweetAlert2 popups */
+.swal2-popup {
+  border-radius: 1.5rem !important;
+  font-family: var(--font-sans);
+}
+
+.swal2-styled.swal2-confirm {
+  background: var(--primary) !important;
+  border-radius: 9999px !important;
+  padding: 0.65rem 1.75rem !important;
+  box-shadow: none !important;
+}
+
+.swal2-styled.swal2-confirm:hover {
+  background: var(--secondary) !important;
 }
 
 @keyframes l5 {
