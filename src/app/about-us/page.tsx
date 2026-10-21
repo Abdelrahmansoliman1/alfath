@@ -6,6 +6,9 @@ const LetsFind = dynamic(() => import("@/components/about/LetsFind"));
 const HeroSection = dynamic(() => import("@/components/common/HeroSection"));
 const OurVision = dynamic(() => import("@/components/about/OurVision"));
 const OurMission = dynamic(() => import("@/components/about/OurMission"));
+const ManagementTeam = dynamic(
+  () => import("@/components/about/ManagementTeam")
+);
 
 export const metadata: Metadata = {
   title: `Alfath | ${aboutUsPage.title}`,
@@ -16,12 +19,13 @@ export default function About() {
     <>
       <HeroSection title={aboutUsPage.title} image="bg-2.jpg" />
       <LetsFind />
-      <div className="bg-surface py-16 -mb-10">
+      <div className="bg-surface py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 container mx-auto z-10 relative">
           <OurMission />
           <OurVision />
         </div>
       </div>
+      <ManagementTeam />
     </>
   );
 }

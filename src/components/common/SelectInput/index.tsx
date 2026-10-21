@@ -73,7 +73,8 @@ export default function SelectInput({
         id={name}
         name={name}
         title={name}
-        defaultValue={value}
+        value={value}
+        readOnly
       />
       {label && <Label value={label} className="text-start" />}
       <Dropdown

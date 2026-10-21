@@ -16,6 +16,7 @@ import { useSearchParams } from "next/navigation";
 import TitleSection from "@/components/title";
 import UnderLine from "@/components/common/underLine";
 import emailjs from "@emailjs/browser";
+import { emailjsConfig } from "@/constant/emailjs";
 import { errorAlert, successAlert } from "@/utils/alert";
 
 export default function RequestQuoteForm() {
@@ -68,10 +69,10 @@ export default function RequestQuoteForm() {
         //   });
 
         await emailjs.sendForm(
-          "service_4ln6yl5",
-          "template_99iv9rq",
+          emailjsConfig.serviceId,
+          emailjsConfig.templates.requestQuote,
           form.current!,
-          "Fm3JYo6_U475aI-uz"
+          emailjsConfig.publicKey
         );
 
         setLoading(false);

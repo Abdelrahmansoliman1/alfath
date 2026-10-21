@@ -5,6 +5,7 @@ import { useFormik } from "formik";
 import { useRef, useState } from "react";
 import { object, string } from "yup";
 import emailjs from "@emailjs/browser";
+import { emailjsConfig } from "@/constant/emailjs";
 import { errorAlert, successAlert } from "@/utils/alert";
 
 export default function MassageForm() {
@@ -30,10 +31,10 @@ export default function MassageForm() {
 
         try {
           await emailjs.sendForm(
-            "service_4ln6yl5",
-            "template_hr668qe",
+            emailjsConfig.serviceId,
+            emailjsConfig.templates.contactUs,
             form.current!,
-            "Fm3JYo6_U475aI-uz"
+            emailjsConfig.publicKey
           );
 
           successAlert("Contact us", "Your message has been sent successfully");
