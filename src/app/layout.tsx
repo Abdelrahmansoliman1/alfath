@@ -16,9 +16,16 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Alfath",
+  metadataBase: new URL("https://alfathshipping.com"),
+  title: "Al-Fath for Shipping Agencies | Shipping & Logistics in Egypt",
   description:
     "Established in 2024, Al-Fath for Shipping Agencies has swiftly emerged as a leading force in the maritime and logistics industry.",
+  openGraph: {
+    type: "website",
+    siteName: "Al-Fath for Shipping Agencies",
+    url: "https://alfathshipping.com",
+    images: ["/logo-lg.png"],
+  },
 };
 
 export default function RootLayout({
