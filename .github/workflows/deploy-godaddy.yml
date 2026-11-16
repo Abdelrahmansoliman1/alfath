@@ -1,0 +1,43 @@
+# Builds the static site and uploads it to GoDaddy (cPanel) over FTP.
+# Runs on every push to main, or manually from the Actions tab ("Run workflow").
+# Needs repository secrets: FTP_SERVER, FTP_USERNAME, FTP_PASSWORD.
+# Optional repository variable FTP_SERVER_DIR (default "public_html/") — the folder
+# on the server, relative to where the FTP account lands when it logs in.
+name: Deploy to GoDaddy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-godaddy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm run build
+
+      - name: Upload to GoDaddy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: ${{ vars.FTP_SERVER_DIR || 'public_html/' }}
