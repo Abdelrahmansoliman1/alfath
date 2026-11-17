@@ -3,6 +3,14 @@
 Options -Indexes
 DirectoryIndex index.html
 
+# Always use https (keeps .well-known open so SSL renewal checks still work)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteCond %{REQUEST_URI} !^/\.well-known/
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
 # Use the site's own "Page Not Found" page
 ErrorDocument 404 /404.html
 
